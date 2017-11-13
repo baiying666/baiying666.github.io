@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="选择器,css," />
+  <meta name="keywords" content="js,倒计时," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
-<meta name="keywords" content="选择器,css">
+<meta name="description" content="1， js中日期转换成时间戳12345function strto_time(str_time)&amp;#123;	var str = str_time.replace(/-/g,&amp;apos;/&amp;apos;);//将-替换成/，因为下面这个构造函数只支持/分隔的日期字符串	var date = new Date(str); //构造一个日期型数据，值为传入的字符串	return date.getTime">
+<meta name="keywords" content="js,倒计时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3选择器与jQuery选择器">
-<meta property="og:url" content="http://naivebai.site/2017/11/13/css选择器/index.html">
+<meta property="og:title" content="js时间戳，倒计时">
+<meta property="og:url" content="http://naivebai.site/2017/11/13/倒计时/index.html">
 <meta property="og:site_name" content="Belle&#39;s blog">
-<meta property="og:description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
+<meta property="og:description" content="1， js中日期转换成时间戳12345function strto_time(str_time)&amp;#123;	var str = str_time.replace(/-/g,&amp;apos;/&amp;apos;);//将-替换成/，因为下面这个构造函数只支持/分隔的日期字符串	var date = new Date(str); //构造一个日期型数据，值为传入的字符串	return date.getTime">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-13T09:17:10.102Z">
+<meta property="og:updated_time" content="2017-11-13T09:17:18.402Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3选择器与jQuery选择器">
-<meta name="twitter:description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
+<meta name="twitter:title" content="js时间戳，倒计时">
+<meta name="twitter:description" content="1， js中日期转换成时间戳12345function strto_time(str_time)&amp;#123;	var str = str_time.replace(/-/g,&amp;apos;/&amp;apos;);//将-替换成/，因为下面这个构造函数只支持/分隔的日期字符串	var date = new Date(str); //构造一个日期型数据，值为传入的字符串	return date.getTime">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://naivebai.site/2017/11/13/css选择器/"/>
+  <link rel="canonical" href="http://naivebai.site/2017/11/13/倒计时/"/>
 
 
 
 
 
-  <title>CSS3选择器与jQuery选择器 | Belle's blog</title>
+  <title>js时间戳，倒计时 | Belle's blog</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/css选择器/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/倒计时/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS3选择器与jQuery选择器</h1>
+          <h1 class="post-title" itemprop="name headline">js时间戳，倒计时</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -362,19 +362,9 @@
       
 
       
-        <h4 id="1-Css与jQuery选择器转换-gt-lt-eq"><a href="#1-Css与jQuery选择器转换-gt-lt-eq" class="headerlink" title="1,Css与jQuery选择器转换 gt lt eq"></a>1,Css与jQuery选择器转换 gt lt eq</h4><p><style><br>table{<br>    width: 100px;<br>}<br></style><br> | 名称 | Css | jQuery |<br> | —- | —- | —- |<br> | 第一个元素 | :first-child | :first,:first-child |<br> | 最后个元素 | :last-child | :last,:last-child |<br> | 偶数的元素 | :nth-child(even) | :even |<br> | 奇数的元素 | :nth-child(odd) | :odd |<br> | 大于给定索引值的元素 | :nth-child(n+2) | :gt(0) |<br> | 小于给定索引值的元素 | :nth-child(-n+6)| :lt(2) |</p>
-<h4 id="2-CSS3-nth-child-伪类选择器"><a href="#2-CSS3-nth-child-伪类选择器" class="headerlink" title="2,CSS3 :nth-child()伪类选择器"></a>2,CSS3 :nth-child()伪类选择器</h4><ul>
-<li>:nth-child(an+b)解读<blockquote>
-<ol>
-<li>:nth-child(n) n为大于0的整数</li>
-<li>:nth-child(an) 倍数写法，例如第2、第6、第9</li>
-<li>:nth-child(an+b) 与 :nth-child(an-b)</li>
-<li>:nth-child(-an+b) 从b个开始往回算，所以它匹配的最多也不会超过b个</li>
-<li>:nth-child(odd) 与 :nth-child(even),:nth-child(2n) 与 :nth-child(2n+1) 奇偶配</li>
-</ol>
-</blockquote>
-</li>
-</ul>
+        <h4 id="1，-js中日期转换成时间戳"><a href="#1，-js中日期转换成时间戳" class="headerlink" title="1， js中日期转换成时间戳"></a>1， js中日期转换成时间戳</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function strto_time(str_time)&#123;</div><div class="line">	var str = str_time.replace(/-/g,&apos;/&apos;);//将-替换成/，因为下面这个构造函数只支持/分隔的日期字符串</div><div class="line">	var date = new Date(str); //构造一个日期型数据，值为传入的字符串</div><div class="line">	return date.getTime()/1000;//返回距 1970 年 1 月 1 日之间的毫秒数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="2，倒计时（天、时、分、秒）"><a href="#2，倒计时（天、时、分、秒）" class="headerlink" title="2，倒计时（天、时、分、秒）"></a>2，倒计时（天、时、分、秒）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;title&gt;JS实现倒计时(时、分，秒)&lt;/title&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        function ShowCountDown(year,month,day,divname)</div><div class="line">        &#123;</div><div class="line">            var now = new Date();</div><div class="line">            var endDate = new Date(year, month, day);</div><div class="line">            var leftTime=endDate.getTime()-now.getTime();</div><div class="line">            var dd = parseInt(leftTime / 1000 / 60 / 60 / 24, 10);//计算剩余的天数</div><div class="line">            var hh = parseInt(leftTime / 1000 / 60 / 60 % 24, 10);//计算剩余的小时数</div><div class="line">            var mm = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟数</div><div class="line">            var ss = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数</div><div class="line">            dd = checkTime(dd);</div><div class="line">            hh = checkTime(hh);</div><div class="line">            mm = checkTime(mm);</div><div class="line">            ss = checkTime(ss);//小于10的话加0</div><div class="line">            var cc = document.getElementById(divname);</div><div class="line">            cc.innerHTML = &quot;距离&quot; + year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日还有：&quot; + dd + &quot;天&quot; + hh + &quot;小时&quot; + mm + &quot;分&quot; + ss + &quot;秒&quot;;</div><div class="line">        &#125;</div><div class="line">        function checkTime(i)</div><div class="line">        &#123;</div><div class="line">            if (i &lt; 10) &#123;</div><div class="line">                i = &quot;0&quot; + i;</div><div class="line">            &#125;</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">        window.setInterval(function()&#123;ShowCountDown(2020,11,11,&apos;countdown&apos;);&#125;, 1000);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;countdown&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="3，点击获取验证码倒计时"><a href="#3，点击获取验证码倒计时" class="headerlink" title="3，点击获取验证码倒计时"></a>3，点击获取验证码倒计时</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id = &quot;getVerifyCode&quot; class=&quot;ableCode&quot; style=&quot;width:100px;height: 30px;line-height: 30px;background: blue;&quot; onclick=&quot;countdownTimer()&quot;&gt;获取验证码&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var wait=20;</div><div class="line">    function countdownTimer() &#123;</div><div class="line">        var o = $(&quot;#getVerifyCode&quot;);</div><div class="line">        if (wait == 0) &#123;</div><div class="line">            o.css(&quot;background&quot;,&quot;blue&quot;);</div><div class="line">            o.html(&quot;获取验证码&quot;);</div><div class="line">            //o.attr(&quot;onclick&quot;,&quot;getVerCode();&quot;);</div><div class="line">            wait = 20;</div><div class="line">        &#125;else&#123;</div><div class="line">            wait--;</div><div class="line">            o.css(&quot;background&quot;,&quot;gray&quot;);</div><div class="line">            o.html(wait + &quot;秒后重发&quot;);</div><div class="line">            setTimeout(function() &#123;</div><div class="line">                countdownTimer();</div><div class="line">            &#125;, 1000)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -403,9 +393,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/选择器/" rel="tag"># 选择器</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/倒计时/" rel="tag"># 倒计时</a>
           
         </div>
       
@@ -418,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/13/倒计时/" rel="next" title="js时间戳，倒计时">
-                <i class="fa fa-chevron-left"></i> js时间戳，倒计时
+              <a href="/2017/11/09/json与jsonp区别浅析/" rel="next" title="json与jsonp区别">
+                <i class="fa fa-chevron-left"></i> json与jsonp区别
               </a>
             
           </div>
@@ -428,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/13/table/" rel="prev" title="table表格">
-                table表格 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/13/css选择器/" rel="prev" title="CSS3选择器与jQuery选择器">
+                CSS3选择器与jQuery选择器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Css与jQuery选择器转换-gt-lt-eq"><span class="nav-number">1.</span> <span class="nav-text">1,Css与jQuery选择器转换 gt lt eq</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-CSS3-nth-child-伪类选择器"><span class="nav-number">2.</span> <span class="nav-text">2,CSS3 :nth-child()伪类选择器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1，-js中日期转换成时间戳"><span class="nav-number">1.</span> <span class="nav-text">1， js中日期转换成时间戳</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2，倒计时（天、时、分、秒）"><span class="nav-number">2.</span> <span class="nav-text">2，倒计时（天、时、分、秒）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3，点击获取验证码倒计时"><span class="nav-number">3.</span> <span class="nav-text">3，点击获取验证码倒计时</span></a></li></ol></div>
             
 
           </div>

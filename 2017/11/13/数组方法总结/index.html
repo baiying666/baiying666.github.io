@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="选择器,css," />
+  <meta name="keywords" content="数组,js," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
-<meta name="keywords" content="选择器,css">
+<meta name="description" content="一、添加和删除元素 原有数组会改变，如果是添加元素，返回值是增加元素后新数组的长度；如果是删除元素，返回值是删除掉的元素。   push(ele1,ele2,ele3,...);从数组末尾添加元素 unshift(ele1,ele2,ele3,...); 从数组开头添加元素 pop();删掉数组最后一个元素，并将删除掉的元素返回 shift(); 删掉数组第一个元素，并将该元素返回 concat(">
+<meta name="keywords" content="数组,js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3选择器与jQuery选择器">
-<meta property="og:url" content="http://naivebai.site/2017/11/13/css选择器/index.html">
+<meta property="og:title" content="js数组方法总结">
+<meta property="og:url" content="http://naivebai.site/2017/11/13/数组方法总结/index.html">
 <meta property="og:site_name" content="Belle&#39;s blog">
-<meta property="og:description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
+<meta property="og:description" content="一、添加和删除元素 原有数组会改变，如果是添加元素，返回值是增加元素后新数组的长度；如果是删除元素，返回值是删除掉的元素。   push(ele1,ele2,ele3,...);从数组末尾添加元素 unshift(ele1,ele2,ele3,...); 从数组开头添加元素 pop();删掉数组最后一个元素，并将删除掉的元素返回 shift(); 删掉数组第一个元素，并将该元素返回 concat(">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-13T09:17:10.102Z">
+<meta property="og:updated_time" content="2017-11-13T06:10:35.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3选择器与jQuery选择器">
-<meta name="twitter:description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
+<meta name="twitter:title" content="js数组方法总结">
+<meta name="twitter:description" content="一、添加和删除元素 原有数组会改变，如果是添加元素，返回值是增加元素后新数组的长度；如果是删除元素，返回值是删除掉的元素。   push(ele1,ele2,ele3,...);从数组末尾添加元素 unshift(ele1,ele2,ele3,...); 从数组开头添加元素 pop();删掉数组最后一个元素，并将删除掉的元素返回 shift(); 删掉数组第一个元素，并将该元素返回 concat(">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://naivebai.site/2017/11/13/css选择器/"/>
+  <link rel="canonical" href="http://naivebai.site/2017/11/13/数组方法总结/"/>
 
 
 
 
 
-  <title>CSS3选择器与jQuery选择器 | Belle's blog</title>
+  <title>js数组方法总结 | Belle's blog</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/css选择器/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/数组方法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS3选择器与jQuery选择器</h1>
+          <h1 class="post-title" itemprop="name headline">js数组方法总结</h1>
         
 
         <div class="post-meta">
@@ -302,7 +302,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T00:00:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T16:59:51+08:00">
                 2017-11-13
               </time>
             
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -362,19 +362,77 @@
       
 
       
-        <h4 id="1-Css与jQuery选择器转换-gt-lt-eq"><a href="#1-Css与jQuery选择器转换-gt-lt-eq" class="headerlink" title="1,Css与jQuery选择器转换 gt lt eq"></a>1,Css与jQuery选择器转换 gt lt eq</h4><p><style><br>table{<br>    width: 100px;<br>}<br></style><br> | 名称 | Css | jQuery |<br> | —- | —- | —- |<br> | 第一个元素 | :first-child | :first,:first-child |<br> | 最后个元素 | :last-child | :last,:last-child |<br> | 偶数的元素 | :nth-child(even) | :even |<br> | 奇数的元素 | :nth-child(odd) | :odd |<br> | 大于给定索引值的元素 | :nth-child(n+2) | :gt(0) |<br> | 小于给定索引值的元素 | :nth-child(-n+6)| :lt(2) |</p>
-<h4 id="2-CSS3-nth-child-伪类选择器"><a href="#2-CSS3-nth-child-伪类选择器" class="headerlink" title="2,CSS3 :nth-child()伪类选择器"></a>2,CSS3 :nth-child()伪类选择器</h4><ul>
-<li>:nth-child(an+b)解读<blockquote>
+        <h4 id="一、添加和删除元素"><a href="#一、添加和删除元素" class="headerlink" title="一、添加和删除元素"></a>一、添加和删除元素</h4><blockquote>
+<p>原有数组会改变，如果是添加元素，返回值是增加元素后新数组的长度；如果是删除元素，返回值是删除掉的元素。</p>
+</blockquote>
 <ol>
-<li>:nth-child(n) n为大于0的整数</li>
-<li>:nth-child(an) 倍数写法，例如第2、第6、第9</li>
-<li>:nth-child(an+b) 与 :nth-child(an-b)</li>
-<li>:nth-child(-an+b) 从b个开始往回算，所以它匹配的最多也不会超过b个</li>
-<li>:nth-child(odd) 与 :nth-child(even),:nth-child(2n) 与 :nth-child(2n+1) 奇偶配</li>
+<li><code>push(ele1,ele2,ele3,...);</code>从数组末尾添加元素</li>
+<li><code>unshift(ele1,ele2,ele3,...);</code> 从数组开头添加元素</li>
+<li><code>pop();</code>删掉数组最后一个元素，并将删除掉的元素返回</li>
+<li><code>shift();</code> 删掉数组第一个元素，并将该元素返回</li>
+<li><code>concat();</code> 该方法用于连接两个或者多个数组，该方法不会改变原有的数组，但会返回一个被连接后的数组。使用语法: <code>arr.concat(arr1,arr2,...,arrN)</code></li>
 </ol>
+<h4 id="二、slice-和-splice-方法"><a href="#二、slice-和-splice-方法" class="headerlink" title="二、slice 和 splice 方法"></a>二、slice 和 splice 方法</h4><ol>
+<li><code>slice(start,end);</code> 从数组索引为start的位置开始截取元素到索引为end的位置，组成一个新的数组，并返回。start必填，end可选填，如果end不填，表示截取到数组末尾；start和end的值都可为负值，如果为负值，表示从数组的末尾开始算起。</li>
+<li><code>splice(index,count,item1,item2,…,itemN);</code> 该方法功能很强大，可以对数组进行增加/删除/修改，并且会改变原数组 。<blockquote>
+<ul>
+<li>增加元素<br><code>splice(index,0,args);</code> index表示从哪个索引位置开始增加，args表示增加的元素，返回值为空数组</li>
+<li>替换元素<br><code>splice(index,count,args);</code> index表示从哪个索引位置开始替换，count表示替换几个元素，args表示用来替换的元素，返回值为被替换掉的元素</li>
+<li>删除元素<br><code>splice(index,count);</code> index表示从哪个位置开始删除，count表示删除几个，返回被删除的元素组成的一个新数组 </li>
+</ul>
 </blockquote>
 </li>
+</ol>
+<h4 id="三、排序方法"><a href="#三、排序方法" class="headerlink" title="三、排序方法"></a>三、排序方法</h4><ol>
+<li>reverse() 颠倒数组中元素的顺序，返回值是颠倒后的数组</li>
+<li><p>sort() 调用函数不传参时，将按ASCII码对数组中的元素进行排序。如果需要按照其他标准排序，可以直接将函数作为参数，从而实现排序 </p>
+<ul>
+<li><p>升序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var aNum = [33,22,67,3,78];</div><div class="line"> aNum.sort(function(a,b)&#123;      return a-b;</div><div class="line"> &#125;);</div><div class="line">console.log(aNum);</div><div class="line">`</div></pre></td></tr></table></figure>
+</li>
+<li><p>带单位升序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> var aNum = [&apos;33px&apos;,&apos;&apos;22px&apos;,&apos;67px&apos;,&apos;78px&apos;];</div><div class="line"> aNum.sort(function(a,b)&#123;</div><div class="line">     return parseInt(a)-parseInt(a);</div><div class="line"> &#125;);</div><div class="line">console.log(aNum);</div></pre></td></tr></table></figure>
+</li>
 </ul>
+</li>
+</ol>
+<h4 id="四、数组转换"><a href="#四、数组转换" class="headerlink" title="四、数组转换"></a>四、数组转换</h4><ol>
+<li><code>toLocaleString();</code> 用于将数组转换为本地字符串，作用和toString差不多，但此方法是使用地区特定的分隔符来将生成的字符串连接起来的。 如果是为了返回时间类型的数据,推荐使用LocaleString().若是在后台处理字符串,请务必使用toString()。</li>
+<li><code>join();</code>该方法用于将一个数组的所有元素都按指定的分隔符分隔，转换成字符串。</li>
+</ol>
+<h4 id="五、位置方法"><a href="#五、位置方法" class="headerlink" title="五、位置方法"></a>五、位置方法</h4><ol>
+<li><code>indexOf(ele);</code> 在数组中元素ele第一次出现的位置，有就返回索引，没有就返回-1</li>
+<li><code>lastIndexOf(ele);</code>返回是从尾向前的元素ele第一次出现的位置</li>
+</ol>
+<h4 id="六、迭代方法"><a href="#六、迭代方法" class="headerlink" title="六、迭代方法"></a>六、迭代方法</h4><ul>
+<li>迭代：每一次对过程的重复称为迭代</li>
+</ul>
+<ol>
+<li><p><code>every(func);</code> func是一个函数，对数组中的每一项执行func函数，如果每次函数调用都返回true，结果就返回true，否则返回false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var arr=[1,2,3,4,5,6];</div><div class="line">var result = arr.every( function(item,index,arry)&#123;</div><div class="line">     return item&gt;5;</div><div class="line"> &#125;);</div><div class="line"> alert(result);  //false</div><div class="line">  </div><div class="line"> var arr = [3,4,5];</div><div class="line"> var result = arr.every( function(item,index,ary)&#123;</div><div class="line">     return item&gt;2;</div><div class="line">  &#125;) </div><div class="line"> alert(result);//true</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>filter(func);</code> 对数组中的每一项运行func函数，将每次调用结果为true的元素组合成新的数组保留下来返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5,6,7];</div><div class="line">var result = arr.filter(function(item,index,ary)&#123;</div><div class="line">    return item&gt;5;</div><div class="line">&#125;);</div><div class="line">alert(result); //返回结果为[6,7]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>3.<code>forEach(func);</code>循环遍历数组中的每一项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4];</div><div class="line">arr.forEach(function(item,index)&#123;</div><div class="line">    console.log(item);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>4.<code>map(func);</code>  对数组中的每一项运行func函数，将每次调用的结果组合成新的数组返回，注意，这里返回的是数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4];</div><div class="line">var result = arr.map(function(item,index)&#123;</div><div class="line">   return item&gt;3;</div><div class="line">&#125;)</div><div class="line">alert(result);//false,false,false,true</div></pre></td></tr></table></figure></p>
+<ol>
+<li>some(func); 对数组中的每一项运行func函数，如果有一次函数调用返回true，结果就返回true，否则返回false</li>
+</ol>
+<h4 id="七，归并方法"><a href="#七，归并方法" class="headerlink" title="七，归并方法"></a>七，归并方法</h4><ol>
+<li><code>reduce(function(pre,cur,index,arr){},初始值);</code> 该方法从数组的第一项逐个遍历至尾，使用指定的函数将数组进行整合，只返回一个值，这就是归并方法。<blockquote>
+<p>参数说明：</p>
+<ul>
+<li>一共可以传两个参数，一个是执行简化操作的函数，这个参数是必需的；第二个参数是传递给函数的一个初始值。</li>
+<li>第一次调用化简函数，传了初始值，pre的值就是初始值，cur就是数组的第一项；没传初始值，pre的值就是数组的第一项，cur就是数组的第二项。</li>
+<li>第二次调用化简操作参数，pre是上一次函数调用的返回值，cur是当前值。<br>可以结合以下代码进行理解：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,3,4,5];</div><div class="line">var sum = arr.reduce(function(x,y)&#123;return x+y;&#125;,0); //数组元素求和</div><div class="line">var multi = arr.reduce(function(x,y)&#123;return x*y&#125;,1);//求出数组中各元素的积</div><div class="line">var max = arr.reduce(function(x,y)&#123;return (x&gt;y)?x:y&#125;);//求出最大值为6</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p>2.<code>reduceRight();</code> 该方法的使用和reduce() 是一样的，这里可以联想到indexOf() 方法和lastIndexOf()方法的关系，即reduceRight()方法是按照数组索引从高到低处理数组</p>
 
       
     </div>
@@ -403,9 +461,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/选择器/" rel="tag"># 选择器</a>
+            <a href="/tags/数组/" rel="tag"># 数组</a>
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -418,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/13/倒计时/" rel="next" title="js时间戳，倒计时">
-                <i class="fa fa-chevron-left"></i> js时间戳，倒计时
+              <a href="/2017/11/13/table/" rel="next" title="table表格">
+                <i class="fa fa-chevron-left"></i> table表格
               </a>
             
           </div>
@@ -427,10 +485,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/13/table/" rel="prev" title="table表格">
-                table表格 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -594,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Css与jQuery选择器转换-gt-lt-eq"><span class="nav-number">1.</span> <span class="nav-text">1,Css与jQuery选择器转换 gt lt eq</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-CSS3-nth-child-伪类选择器"><span class="nav-number">2.</span> <span class="nav-text">2,CSS3 :nth-child()伪类选择器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、添加和删除元素"><span class="nav-number">1.</span> <span class="nav-text">一、添加和删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、slice-和-splice-方法"><span class="nav-number">2.</span> <span class="nav-text">二、slice 和 splice 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、排序方法"><span class="nav-number">3.</span> <span class="nav-text">三、排序方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、数组转换"><span class="nav-number">4.</span> <span class="nav-text">四、数组转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、位置方法"><span class="nav-number">5.</span> <span class="nav-text">五、位置方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六、迭代方法"><span class="nav-number">6.</span> <span class="nav-text">六、迭代方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七，归并方法"><span class="nav-number">7.</span> <span class="nav-text">七，归并方法</span></a></li></ol></div>
             
 
           </div>

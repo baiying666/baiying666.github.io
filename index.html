@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/数组方法总结/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/26/js 拼接HTML字符串 onclick事件传多个参数问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -291,7 +291,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/13/数组方法总结/" itemprop="url">js数组方法总结</a></h1>
+                <a class="post-title-link" href="/2017/12/26/js 拼接HTML字符串 onclick事件传多个参数问题/" itemprop="url">js 拼接HTML字符串 onclick事件传多个参数问题</a></h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T16:59:51+08:00">
-                2017-11-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-26T00:00:00+08:00">
+                2017-12-26
               </time>
             
 
@@ -365,77 +365,168 @@
       
         
           
-            <h4 id="一、添加和删除元素"><a href="#一、添加和删除元素" class="headerlink" title="一、添加和删除元素"></a>一、添加和删除元素</h4><blockquote>
-<p>原有数组会改变，如果是添加元素，返回值是增加元素后新数组的长度；如果是删除元素，返回值是删除掉的元素。</p>
-</blockquote>
-<ol>
-<li><code>push(ele1,ele2,ele3,...);</code>从数组末尾添加元素</li>
-<li><code>unshift(ele1,ele2,ele3,...);</code> 从数组开头添加元素</li>
-<li><code>pop();</code>删掉数组最后一个元素，并将删除掉的元素返回</li>
-<li><code>shift();</code> 删掉数组第一个元素，并将该元素返回</li>
-<li><code>concat();</code> 该方法用于连接两个或者多个数组，该方法不会改变原有的数组，但会返回一个被连接后的数组。使用语法: <code>arr.concat(arr1,arr2,...,arrN)</code></li>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">[html]</div><div class="line">&lt;!DOCTYPE html&gt;  </div><div class="line">&lt;html lang=&quot;en&quot;&gt;  </div><div class="line">&lt;head&gt;  </div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;  </div><div class="line">    &lt;title&gt;js字符串拼接onclick出现的问题&lt;/title&gt;  </div><div class="line">&lt;/head&gt;  </div><div class="line">&lt;body&gt;  </div><div class="line">    &lt;div id=&quot;box&quot;&gt;  </div><div class="line">  </div><div class="line">    &lt;/div&gt;  </div><div class="line">&lt;/body&gt;  </div><div class="line">&lt;/html&gt;  </div><div class="line">&lt;script src=&quot;../../../js/jquery1.7.js&quot;&gt;&lt;/script&gt;  </div><div class="line">&lt;script&gt;  </div><div class="line">    function show(a,b) &#123;  </div><div class="line">        //console.log(a.name);  </div><div class="line">        //console.log(a.age);  </div><div class="line">        console.log(a);  </div><div class="line">        console.log(b);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    function show2(a) &#123;  </div><div class="line">        console.log(a);  </div><div class="line">        alert(a);  </div><div class="line">        console.log(a.name);  </div><div class="line">        console.log(a.age);  </div><div class="line">  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    var arr = [  </div><div class="line">        &#123;  </div><div class="line">            name:&apos;wangwu&apos;,  </div><div class="line">            age:23,  </div><div class="line">            hight:[180,180,180]  </div><div class="line">        &#125;,  </div><div class="line">  </div><div class="line">        &#123;  </div><div class="line">            name:&apos;zhangsan&apos;,  </div><div class="line">            age:22,  </div><div class="line">            hight:[180,160,180]  </div><div class="line">        &#125;,  </div><div class="line">        &#123;  </div><div class="line">            name:&apos;lisi&apos;,  </div><div class="line">            age:21,  </div><div class="line">            hight:[180,170,180]  </div><div class="line">        &#125;  </div><div class="line">    ]  </div><div class="line">  </div><div class="line">    var ht=&apos;&apos;  </div><div class="line">  </div><div class="line">  </div><div class="line">    for(var i=0 ; i&lt; arr.length ; i++)&#123;  </div><div class="line">        //错误示范1,点击事件不触发  </div><div class="line">        //ht = ht + &apos;&lt;div&gt;&lt;button onclick=&quot;show(arr[i].name,arr[i].age)&quot;&gt;我是按钮&apos;+i+&apos;&lt;/button&gt;&lt;/div&gt;&lt;br&gt;&apos;  </div><div class="line">  </div><div class="line">        //错误示范2,点击事件在页面加载时候就已执行  </div><div class="line">        //ht = ht + &apos;&lt;div&gt;&lt;button onclick=&quot;&apos;+show(arr[i].name,arr[i].age)+&apos;&quot;&gt;我是按钮&apos;+i+&apos;&lt;/button&gt;&lt;/div&gt;&lt;br&gt;&apos;  </div><div class="line">  </div><div class="line">        //错误示范3,点击事件不触发  </div><div class="line">        //ht = ht + &apos;&lt;div&gt;&lt;button onclick=&quot;show(&apos;+arr[i].name+&apos;,&apos;+ arr[i].age +&apos;)&quot;&gt;我是按钮&apos;+i+&apos;&lt;/button&gt;&lt;/div&gt;&lt;br&gt;&apos;  </div><div class="line">  </div><div class="line">        //错误示范4  </div><div class="line">        //ht = ht + &apos;&lt;div&gt;&lt;button onclick=show2(&quot;&apos;+arr[i]+&apos;&quot;)&gt;我是按钮&apos;+i+&apos;&lt;/button&gt;&lt;/div&gt;&lt;br&gt;&apos;  </div><div class="line">  </div><div class="line">        //正确示范1  </div><div class="line">        //ht = ht + &apos;&lt;div&gt;&lt;button onclick=show(&quot;&apos;+arr[i].name+&apos;&quot;,&quot;&apos;+ arr[i].age +&apos;&quot;)&gt;我是按钮&apos;+i+&apos;&lt;/button&gt;&lt;/div&gt;&lt;br&gt;&apos;  </div><div class="line">          </div><div class="line">        //正确示范2  </div><div class="line">        ht = ht + &apos;&lt;div&gt;&lt;button onclick=show2(&apos;+JSON.stringify(arr[i])+&apos;)&gt;我是按钮&apos;+i+&apos;&lt;/button&gt;&lt;/div&gt;&lt;br&gt;&apos;  </div><div class="line">  </div><div class="line">  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    $(&apos;#box&apos;).append(ht)  </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/19/github的一些问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/github的一些问题/" itemprop="url">github的一些问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T00:00:00+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/版本控制/" itemprop="url" rel="index">
+                    <span itemprop="name">版本控制</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="如何在github上传后，显示出html页面"><a href="#如何在github上传后，显示出html页面" class="headerlink" title="如何在github上传后，显示出html页面"></a>如何在github上传后，显示出html页面</h4><ol>
+<li>在github中新建一个名为test的仓库，最好不勾选README.md</li>
+<li>在本地新建一个文件夹，然后新建README.md文件，按照新建仓库的时候出现的提示进行操作</li>
+<li>将index.html等文件(必须有名为index的html文件)放入到本地文件夹中，上传到test仓库</li>
+<li>github的test仓库中,Settings - &gt; 找到githubPages点击none,切换到master branch，save保存</li>
+<li>保存后出现了连接，点击，在出现的网址中加上index.html即可预览成功</li>
 </ol>
-<h4 id="二、slice-和-splice-方法"><a href="#二、slice-和-splice-方法" class="headerlink" title="二、slice 和 splice 方法"></a>二、slice 和 splice 方法</h4><ol>
-<li><code>slice(start,end);</code> 从数组索引为start的位置开始截取元素到索引为end的位置，组成一个新的数组，并返回。start必填，end可选填，如果end不填，表示截取到数组末尾；start和end的值都可为负值，如果为负值，表示从数组的末尾开始算起。</li>
-<li><code>splice(index,count,item1,item2,…,itemN);</code> 该方法功能很强大，可以对数组进行增加/删除/修改，并且会改变原数组 。<blockquote>
-<ul>
-<li>增加元素<br><code>splice(index,0,args);</code> index表示从哪个索引位置开始增加，args表示增加的元素，返回值为空数组</li>
-<li>替换元素<br><code>splice(index,count,args);</code> index表示从哪个索引位置开始替换，count表示替换几个元素，args表示用来替换的元素，返回值为被替换掉的元素</li>
-<li>删除元素<br><code>splice(index,count);</code> index表示从哪个位置开始删除，count表示删除几个，返回被删除的元素组成的一个新数组 </li>
+<h4 id="git中出现Please-enter-a-commit-message-to-explain-why-this-merge-is-necessary的处理"><a href="#git中出现Please-enter-a-commit-message-to-explain-why-this-merge-is-necessary的处理" class="headerlink" title="git中出现Please enter a commit message to explain why this merge is necessary的处理"></a>git中出现Please enter a commit message to explain why this merge is necessary的处理</h4><ul>
+<li>解释：请输入提交消息来解释为什么这种合并是必要的</li>
+<li>git在pull或者合并分支的时候会遇到这个界面。可以不管(直接进行下面3,4步)，如果要输入解释的话就需要：</li>
+<li><ol>
+<li>按键盘字母i进入insert模式</li>
+<li>修改最上面那行黄色合并信息，可以不修改</li>
+<li>按键盘左上角”Esc”</li>
+<li>输入”:wq”,注意是冒号+wq,按回车键即可</li>
+</ol>
+</li>
 </ul>
-</blockquote>
-</li>
-</ol>
-<h4 id="三、排序方法"><a href="#三、排序方法" class="headerlink" title="三、排序方法"></a>三、排序方法</h4><ol>
-<li>reverse() 颠倒数组中元素的顺序，返回值是颠倒后的数组</li>
-<li><p>sort() 调用函数不传参时，将按ASCII码对数组中的元素进行排序。如果需要按照其他标准排序，可以直接将函数作为参数，从而实现排序 </p>
-<ul>
-<li><p>升序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var aNum = [33,22,67,3,78];</div><div class="line"> aNum.sort(function(a,b)&#123;      return a-b;</div><div class="line"> &#125;);</div><div class="line">console.log(aNum);</div><div class="line">`</div></pre></td></tr></table></figure>
-</li>
-<li><p>带单位升序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> var aNum = [&apos;33px&apos;,&apos;&apos;22px&apos;,&apos;67px&apos;,&apos;78px&apos;];</div><div class="line"> aNum.sort(function(a,b)&#123;</div><div class="line">     return parseInt(a)-parseInt(a);</div><div class="line"> &#125;);</div><div class="line">console.log(aNum);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="四、数组转换"><a href="#四、数组转换" class="headerlink" title="四、数组转换"></a>四、数组转换</h4><ol>
-<li><code>toLocaleString();</code> 用于将数组转换为本地字符串，作用和toString差不多，但此方法是使用地区特定的分隔符来将生成的字符串连接起来的。 如果是为了返回时间类型的数据,推荐使用LocaleString().若是在后台处理字符串,请务必使用toString()。</li>
-<li><code>join();</code>该方法用于将一个数组的所有元素都按指定的分隔符分隔，转换成字符串。</li>
-</ol>
-<h4 id="五、位置方法"><a href="#五、位置方法" class="headerlink" title="五、位置方法"></a>五、位置方法</h4><ol>
-<li><code>indexOf(ele);</code> 在数组中元素ele第一次出现的位置，有就返回索引，没有就返回-1</li>
-<li><code>lastIndexOf(ele);</code>返回是从尾向前的元素ele第一次出现的位置</li>
-</ol>
-<h4 id="六、迭代方法"><a href="#六、迭代方法" class="headerlink" title="六、迭代方法"></a>六、迭代方法</h4><ul>
-<li>迭代：每一次对过程的重复称为迭代</li>
-</ul>
-<ol>
-<li><p><code>every(func);</code> func是一个函数，对数组中的每一项执行func函数，如果每次函数调用都返回true，结果就返回true，否则返回false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var arr=[1,2,3,4,5,6];</div><div class="line">var result = arr.every( function(item,index,arry)&#123;</div><div class="line">     return item&gt;5;</div><div class="line"> &#125;);</div><div class="line"> alert(result);  //false</div><div class="line">  </div><div class="line"> var arr = [3,4,5];</div><div class="line"> var result = arr.every( function(item,index,ary)&#123;</div><div class="line">     return item&gt;2;</div><div class="line">  &#125;) </div><div class="line"> alert(result);//true</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>filter(func);</code> 对数组中的每一项运行func函数，将每次调用结果为true的元素组合成新的数组保留下来返回</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5,6,7];</div><div class="line">var result = arr.filter(function(item,index,ary)&#123;</div><div class="line">    return item&gt;5;</div><div class="line">&#125;);</div><div class="line">alert(result); //返回结果为[6,7]</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>3.<code>forEach(func);</code>循环遍历数组中的每一项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4];</div><div class="line">arr.forEach(function(item,index)&#123;</div><div class="line">    console.log(item);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>4.<code>map(func);</code>  对数组中的每一项运行func函数，将每次调用的结果组合成新的数组返回，注意，这里返回的是数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4];</div><div class="line">var result = arr.map(function(item,index)&#123;</div><div class="line">   return item&gt;3;</div><div class="line">&#125;)</div><div class="line">alert(result);//false,false,false,true</div></pre></td></tr></table></figure></p>
-<ol>
-<li>some(func); 对数组中的每一项运行func函数，如果有一次函数调用返回true，结果就返回true，否则返回false</li>
-</ol>
-<h4 id="七，归并方法"><a href="#七，归并方法" class="headerlink" title="七，归并方法"></a>七，归并方法</h4><ol>
-<li><code>reduce(function(pre,cur,index,arr){},初始值);</code> 该方法从数组的第一项逐个遍历至尾，使用指定的函数将数组进行整合，只返回一个值，这就是归并方法。<blockquote>
-<p>参数说明：</p>
-<ul>
-<li>一共可以传两个参数，一个是执行简化操作的函数，这个参数是必需的；第二个参数是传递给函数的一个初始值。</li>
-<li>第一次调用化简函数，传了初始值，pre的值就是初始值，cur就是数组的第一项；没传初始值，pre的值就是数组的第一项，cur就是数组的第二项。</li>
-<li>第二次调用化简操作参数，pre是上一次函数调用的返回值，cur是当前值。<br>可以结合以下代码进行理解：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,3,4,5];</div><div class="line">var sum = arr.reduce(function(x,y)&#123;return x+y;&#125;,0); //数组元素求和</div><div class="line">var multi = arr.reduce(function(x,y)&#123;return x*y&#125;,1);//求出数组中各元素的积</div><div class="line">var max = arr.reduce(function(x,y)&#123;return (x&gt;y)?x:y&#125;);//求出最大值为6</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-</li>
-</ol>
-<p>2.<code>reduceRight();</code> 该方法的使用和reduce() 是一样的，这里可以联想到indexOf() 方法和lastIndexOf()方法的关系，即reduceRight()方法是按照数组索引从高到低处理数组</p>
+<h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h4><p><a href="http://www.open-open.com/lib/view/open1418368878948.html#articleHeader9" target="_blank" rel="external">git常用命令</a></p>
 
           
         
@@ -486,7 +577,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/table/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/19/学习社区/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -505,7 +596,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/13/table/" itemprop="url">table表格</a></h1>
+                <a class="post-title-link" href="/2017/12/19/学习社区/" itemprop="url">学习网站</a></h1>
         
 
         <div class="post-meta">
@@ -517,8 +608,352 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T16:59:51+08:00">
-                2017-11-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T00:00:00+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="社区网站"><a href="#社区网站" class="headerlink" title="社区网站"></a>社区网站</h4><ul>
+<li><a href="https://segmentfault.com/" target="_blank" rel="external">segmentfault</a></li>
+<li><a href="https://juejin.im/welcome/design" target="_blank" rel="external">掘金</a></li>
+<li><a href="http://www.open-open.com/lib/" target="_blank" rel="external">深度开源 OPEN经验</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="external">MDN web docs</a></li>
+<li><a href="https://www.w3cplus.com/" target="_blank" rel="external">w3cplus</a></li>
+<li><a href="http://www.admin10000.com/frontend/2/" target="_blank" rel="external">web开发者</a><h4 id="工具类网站"><a href="#工具类网站" class="headerlink" title="工具类网站"></a>工具类网站</h4></li>
+<li><a href="http://caniuse.com/" target="_blank" rel="external">查兼容性</a></li>
+<li><a href="http://node.green/" target="_blank" rel="external">如何得知我当前使用的Node.js支持哪些ES6的特性</a></li>
+<li><a href="http://www.atool.org/about.php" target="_blank" rel="external">ATOOL在线工具</a></li>
+<li><a href="http://cdn.code.baidu.com/" target="_blank" rel="external">百度静态资源公共库</a></li>
+<li><a href="http://www.admin10000.com/document/1551.html" target="_blank" rel="external">网站图片优化工具</a></li>
+<li><a href="http://www.cnblogs.com/alone2015/p/5328079.html" target="_blank" rel="external">把所有的小图标一起做成雪碧图</a>:gulp-css-spriter<h4 id="UI框架"><a href="#UI框架" class="headerlink" title="UI框架"></a>UI框架</h4></li>
+<li><a href="http://v3.bootcss.com/" target="_blank" rel="external">Bootstrap</a></li>
+<li><a href="https://weui.io/" target="_blank" rel="external">WeUI</a>:WeUI 是一套同微信原生视觉体验一致的基础样式库。</li>
+<li><a href="https://ant.design/docs/react/getting-started-cn" target="_blank" rel="external">antDesign</a>:蚂蚁金服开发的</li>
+<li><a href="http://www.bootcss.com/p/flat-ui/" target="_blank" rel="external">Flat UI</a><h4 id="插件网站"><a href="#插件网站" class="headerlink" title="插件网站"></a>插件网站</h4></li>
+<li><a href="http://www.jq22.com/jquery-info819" target="_blank" rel="external">jQuery动画库</a></li>
+<li><a href="http://hovertree.com/texiao/" target="_blank" rel="external">特效网站</a></li>
+<li><a href="http://sc.chinaz.com/" target="_blank" rel="external">China Webmaster</a><h4 id="框架学习"><a href="#框架学习" class="headerlink" title="框架学习"></a>框架学习</h4></li>
+</ul>
+<ol>
+<li>react学习</li>
+</ol>
+<ul>
+<li><a href="https://reactjs.org/docs/installation.html" target="_blank" rel="external">react官网</a></li>
+<li><a href="https://github.com/antgod/blog/tree/master/%E6%96%87%E7%AB%A0/react%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E7%B3%BB%E5%88%97" target="_blank" rel="external">react源码解析系列</a></li>
+</ul>
+<ol>
+<li><a href="https://threejs.org/" target="_blank" rel="external">three.js</a>:如今浏览器的功能越来越强大，而且这些功能可能通过JavaScript直接调用,你可以用HTML5标签轻松地添加音频和视频，而且可以在HTML5画布上创建各种交互组件。现在这个功能集合里又有了一个新成员，即支持webGL。通过webgl可以直接使用显卡的计算资源，创建高性能的二维和三维计算机图形，然后在JavaScript里直接使用webGL编程，创建三维场景并生成动画，这个过程非常复杂，而且容易出错。three.js库可以简化这个过程。看了上面的摘文，我想大概能够明白three.js和webgl的关系，webgl是大部分浏览器直接支持的一种3D绘图标准。three.js在它的基础上进行了进一步的封装和简化开发开发过程，个人认为类似于jQuery对原生js的关系。<ul>
+<li>[WebGL中文网]</li>
+</ul>
+</li>
+<li><ul>
+<li><a href="http://todomvc.com/" target="_blank" rel="external">TodoMVC</a>:如何决定在海量的框架中选择哪个使用,为了帮助解决问题，于是诞生了TodoMVC项目，它使用不同的最流行的JavaScript MV*框架实现了一个相同的Todo应用。</li>
+</ul>
+</li>
+</ol>
+<h4 id="打包工具学习"><a href="#打包工具学习" class="headerlink" title="打包工具学习"></a>打包工具学习</h4><ol>
+<li>webpack</li>
+</ol>
+<ul>
+<li><a href="http://www.css88.com/doc/webpack2/" target="_blank" rel="external">webpack 2.2中文文档</a></li>
+</ul>
+<ol>
+<li>gulp</li>
+</ol>
+<ul>
+<li><a href="https://www.gulpjs.com.cn/docs/api/" target="_blank" rel="external">Gulp中文网</a><br>2.browsersync</li>
+<li><a href="http://www.browsersync.cn/" target="_blank" rel="external">改完代码自动更新</a><h4 id="node学习"><a href="#node学习" class="headerlink" title="node学习"></a>node学习</h4></li>
+<li><a href="http://www.expressjs.com.cn/" target="_blank" rel="external">Express</a>:基于 Node.js 平台，快速、开放、极简的 web 开发框架。</li>
+<li><a href="http://koa.bootcss.com/" target="_blank" rel="external">Koa</a>:Koa – 基于 Node.js 平台的下一代 web 开发框架</li>
+<li><a href="https://electronjs.org/" target="_blank" rel="external">electronjs</a>:构建跨平台Node.js桌面应用</li>
+<li><a href="https://nwjs.io/" target="_blank" rel="external">nw.js</a>:同electronjs，各有优缺点，使用前要具体了解</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/19/jquery可能会出现的bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/jquery可能会出现的bug/" itemprop="url">jquery可能会出现的bug</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T00:00:00+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>jqurey在用append()和html添加处理一些特定的元素时，有的会出现丢失属性的bug。原因不明，改用原生的js的<br>document.createElement和innerHTML添加就好了。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/14/placeholder改变颜色/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/placeholder改变颜色/" itemprop="url">placeholder改变颜色</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T00:00:00+08:00">
+                2017-12-14
               </time>
             
 
@@ -579,8 +1014,7 @@
       
         
           
-            <h4 id="1-table表格单元格之间无空隙"><a href="#1-table表格单元格之间无空隙" class="headerlink" title="1, table表格单元格之间无空隙"></a>1, table表格单元格之间无空隙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">table&#123;</div><div class="line">	border-collapse: collapse;</div><div class="line">&#125;</div><div class="line">td&#123;</div><div class="line">	border:1px solid green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="2-table表格td设置宽度后文字太多自动换行"><a href="#2-table表格td设置宽度后文字太多自动换行" class="headerlink" title="2,table表格td设置宽度后文字太多自动换行"></a>2,table表格td设置宽度后文字太多自动换行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">table&#123;</div><div class="line">        width:304px;</div><div class="line">        table-layout: fixed;</div><div class="line"> &#125;</div><div class="line"> </div><div class="line"> td&#123;</div><div class="line">        width:100px;</div><div class="line">        border:1px solid green;</div><div class="line">        word-wrap:break-word;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">::-webkit-input-placeholder &#123; /* WebKit browsers */</div><div class="line">    　　color:#999;</div><div class="line">   &#125;</div><div class="line">　　:-moz-placeholder &#123; /* Mozilla Firefox 4 to 18 */</div><div class="line">    　　color:#999;</div><div class="line">    &#125;</div><div class="line">　　::-moz-placeholder &#123; /* Mozilla Firefox 19+ */</div><div class="line">    　　color:#999;</div><div class="line">    &#125;</div><div class="line">　　:-ms-input-placeholder &#123; /* Internet Explorer 10+ */</div><div class="line">    　　color:#999;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -630,7 +1064,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/css选择器/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/hexo博客相关的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -649,7 +1083,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/13/css选择器/" itemprop="url">CSS3选择器与jQuery选择器</a></h1>
+                <a class="post-title-link" href="/2017/12/12/hexo博客相关的问题/" itemprop="url">hexo博客相关的问题</a></h1>
         
 
         <div class="post-meta">
@@ -661,8 +1095,157 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T00:00:00+08:00">
-                2017-11-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T00:00:00+08:00">
+                2017-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><a href="http://www.jianshu.com/p/0321cb243963" target="_blank" rel="external">详细 hexo+Github Pages-搭建个人网站</a></li>
+<li><a href="http://www.jianshu.com/p/beb8d611340a" target="_blank" rel="external">Hexo博客从一台电脑迁移到其他电脑</a></li>
+<li><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="external">hexo的next主题个性化教程:打造炫酷网站</a></li>
+<li>hexo本地测试运行重启后页面空白 看看是不是主题文件是不是没有提交到git上去，以至于在分之下载的时候没有下载下主题来<br>-<a href="http://www.jianshu.com/p/db7e64d86067" target="_blank" rel="external">修改博客主题</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/给一段文字中的某个字符添加下划线/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/12/给一段文字中的某个字符添加下划线/" itemprop="url">特殊线 - 应用绝对定位</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T00:00:00+08:00">
+                2017-12-12
               </time>
             
 
@@ -723,18 +1306,12 @@
       
         
           
-            <h4 id="1-Css与jQuery选择器转换-gt-lt-eq"><a href="#1-Css与jQuery选择器转换-gt-lt-eq" class="headerlink" title="1,Css与jQuery选择器转换 gt lt eq"></a>1,Css与jQuery选择器转换 gt lt eq</h4><p><style><br>table{<br>    width: 100px;<br>}<br></style><br> | 名称 | Css | jQuery |<br> | —- | —- | —- |<br> | 第一个元素 | :first-child | :first,:first-child |<br> | 最后个元素 | :last-child | :last,:last-child |<br> | 偶数的元素 | :nth-child(even) | :even |<br> | 奇数的元素 | :nth-child(odd) | :odd |<br> | 大于给定索引值的元素 | :nth-child(n+2) | :gt(0) |<br> | 小于给定索引值的元素 | :nth-child(-n+6)| :lt(2) |</p>
-<h4 id="2-CSS3-nth-child-伪类选择器"><a href="#2-CSS3-nth-child-伪类选择器" class="headerlink" title="2,CSS3 :nth-child()伪类选择器"></a>2,CSS3 :nth-child()伪类选择器</h4><ul>
-<li>:nth-child(an+b)解读<blockquote>
-<ol>
-<li>:nth-child(n) n为大于0的整数</li>
-<li>:nth-child(an) 倍数写法，例如第2、第6、第9</li>
-<li>:nth-child(an+b) 与 :nth-child(an-b)</li>
-<li>:nth-child(-an+b) 从b个开始往回算，所以它匹配的最多也不会超过b个</li>
-<li>:nth-child(odd) 与 :nth-child(even),:nth-child(2n) 与 :nth-child(2n+1) 奇偶配</li>
-</ol>
-</blockquote>
+            <ul>
+<li><p>给一段文字中的某个字符添加下划线</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a&#123;</div><div class="line">       position: relative;</div><div class="line">   &#125;</div><div class="line">   a:after&#123;</div><div class="line">       position: absolute;</div><div class="line">       content: &quot;&quot;;</div><div class="line">       display: inline-block;</div><div class="line">       top:12px;</div><div class="line">       left:50px;</div><div class="line">       width: 80px;</div><div class="line">       height: 50px;</div><div class="line">       background-color: red;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
 </li>
+<li><p>一行文字两侧有两条线可以无线延伸</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        .infobox-header&#123;</div><div class="line">            position: relative;</div><div class="line">            width: 100%;</div><div class="line">            height: 60px;</div><div class="line">            border-bottom:1px solid #0000AA;</div><div class="line">        &#125;</div><div class="line">        .txt&#123;</div><div class="line">            position: absolute;</div><div class="line">            left:50%;</div><div class="line">            margin-left:-100px;</div><div class="line">            width:200px;</div><div class="line">            height: 120px;</div><div class="line">            line-height: 120px;</div><div class="line">            background: #fff;</div><div class="line">            text-align: center;</div><div class="line">            font-size:20px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class=&quot;infobox-header&quot;&gt;</div><div class="line">        &lt;span class=&quot;txt&quot;&gt;版权声明-权利声明&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></li>
 </ul>
 
           
@@ -786,7 +1363,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/13/倒计时/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/ie浏览器，css去掉图片之间产生空白行距问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -805,7 +1382,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/13/倒计时/" itemprop="url">js时间戳，倒计时</a></h1>
+                <a class="post-title-link" href="/2017/12/12/ie浏览器，css去掉图片之间产生空白行距问题/" itemprop="url">ie浏览器，css去掉图片之间产生空白行距问题</a></h1>
         
 
         <div class="post-meta">
@@ -817,8 +1394,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T00:00:00+08:00">
-                2017-11-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T00:00:00+08:00">
+                2017-12-12
               </time>
             
 
@@ -840,8 +1417,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/ie/" itemprop="url" rel="index">
+                    <span itemprop="name">ie</span>
                   </a>
                 </span>
 
@@ -879,9 +1456,187 @@
       
         
           
-            <h4 id="1，-js中日期转换成时间戳"><a href="#1，-js中日期转换成时间戳" class="headerlink" title="1， js中日期转换成时间戳"></a>1， js中日期转换成时间戳</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function strto_time(str_time)&#123;</div><div class="line">	var str = str_time.replace(/-/g,&apos;/&apos;);//将-替换成/，因为下面这个构造函数只支持/分隔的日期字符串</div><div class="line">	var date = new Date(str); //构造一个日期型数据，值为传入的字符串</div><div class="line">	return date.getTime()/1000;//返回距 1970 年 1 月 1 日之间的毫秒数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="2，倒计时（天、时、分、秒）"><a href="#2，倒计时（天、时、分、秒）" class="headerlink" title="2，倒计时（天、时、分、秒）"></a>2，倒计时（天、时、分、秒）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;title&gt;JS实现倒计时(时、分，秒)&lt;/title&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        function ShowCountDown(year,month,day,divname)</div><div class="line">        &#123;</div><div class="line">            var now = new Date();</div><div class="line">            var endDate = new Date(year, month, day);</div><div class="line">            var leftTime=endDate.getTime()-now.getTime();</div><div class="line">            var dd = parseInt(leftTime / 1000 / 60 / 60 / 24, 10);//计算剩余的天数</div><div class="line">            var hh = parseInt(leftTime / 1000 / 60 / 60 % 24, 10);//计算剩余的小时数</div><div class="line">            var mm = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟数</div><div class="line">            var ss = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数</div><div class="line">            dd = checkTime(dd);</div><div class="line">            hh = checkTime(hh);</div><div class="line">            mm = checkTime(mm);</div><div class="line">            ss = checkTime(ss);//小于10的话加0</div><div class="line">            var cc = document.getElementById(divname);</div><div class="line">            cc.innerHTML = &quot;距离&quot; + year + &quot;年&quot; + month + &quot;月&quot; + day + &quot;日还有：&quot; + dd + &quot;天&quot; + hh + &quot;小时&quot; + mm + &quot;分&quot; + ss + &quot;秒&quot;;</div><div class="line">        &#125;</div><div class="line">        function checkTime(i)</div><div class="line">        &#123;</div><div class="line">            if (i &lt; 10) &#123;</div><div class="line">                i = &quot;0&quot; + i;</div><div class="line">            &#125;</div><div class="line">            return i;</div><div class="line">        &#125;</div><div class="line">        window.setInterval(function()&#123;ShowCountDown(2020,11,11,&apos;countdown&apos;);&#125;, 1000);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id=&quot;countdown&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h4 id="3，点击获取验证码倒计时"><a href="#3，点击获取验证码倒计时" class="headerlink" title="3，点击获取验证码倒计时"></a>3，点击获取验证码倒计时</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id = &quot;getVerifyCode&quot; class=&quot;ableCode&quot; style=&quot;width:100px;height: 30px;line-height: 30px;background: blue;&quot; onclick=&quot;countdownTimer()&quot;&gt;获取验证码&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    var wait=20;</div><div class="line">    function countdownTimer() &#123;</div><div class="line">        var o = $(&quot;#getVerifyCode&quot;);</div><div class="line">        if (wait == 0) &#123;</div><div class="line">            o.css(&quot;background&quot;,&quot;blue&quot;);</div><div class="line">            o.html(&quot;获取验证码&quot;);</div><div class="line">            //o.attr(&quot;onclick&quot;,&quot;getVerCode();&quot;);</div><div class="line">            wait = 20;</div><div class="line">        &#125;else&#123;</div><div class="line">            wait--;</div><div class="line">            o.css(&quot;background&quot;,&quot;gray&quot;);</div><div class="line">            o.html(wait + &quot;秒后重发&quot;);</div><div class="line">            setTimeout(function() &#123;</div><div class="line">                countdownTimer();</div><div class="line">            &#125;, 1000)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">        html &#123;</div><div class="line">            margin:0;</div><div class="line">            padding:0;</div><div class="line">            border:0;</div><div class="line">        &#125;</div><div class="line">        body,div,span &#123;</div><div class="line">            margin:0;</div><div class="line">            padding:0;</div><div class="line">            border:0;</div><div class="line">            font-size:12px!important;;</div><div class="line">        &#125;</div><div class="line">        img &#123;vertical-align: bottom;width:50px;&#125; /*主要是vertical-align: bottom;这行代码，如果没有这一行在ie中图片下方会多出一个空白行*/</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div style=&quot;text-align:center;position:relative;border:1px solid red;&quot;&gt;</div><div class="line">    &lt;img src=&quot;img/a.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">    &lt;img src=&quot;img/a.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">    &lt;img src=&quot;img/a.jpg&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/webstorm快捷键设置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/12/webstorm快捷键设置/" itemprop="url">webstorm快捷键设置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T00:00:00+08:00">
+                2017-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编辑工具/" itemprop="url" rel="index">
+                    <span itemprop="name">编辑工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>WebStorm设置Ctrl+滚轮调整字体大小</li>
+</ol>
+<ul>
+<li>点击左上角的File，再点击Setting -&gt; Editor -&gt; General，选择Change font size (Zoom) with Ctrl+Mouse Wheel；<br>点击OK即可。</li>
+</ul>
+<ol>
+<li>webstorm中配置MarkDown</li>
+</ol>
+<ul>
+<li>Settings -&gt; Plugins -&gt; Browse repostories -&gt; 搜索markdown -&gt; install</li>
+</ul>
+<ol>
+<li>webstorm中设置文件类型</li>
+</ol>
+<ul>
+<li>Settings -&gt; Editor -&gt; file Types -&gt; Markdown -&gt; *.md</li>
+</ul>
+<ol>
+<li>webstorm中设置新建某个类型文件的模板</li>
+</ol>
+<ul>
+<li>Settings -&gt; Editor -&gt; File and Code Templates -&gt;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;&lt;/template&gt;</div><div class="line">&lt;script type=&quot;text/ecmascript-6&quot;&gt;</div><div class="line">    </div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style rel=&quot;stylesheet&quot; href=&quot;$1&quot;&gt;</div><div class="line">    </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>3和4必须在2的基础上实现，另外3和4还可合并成一步：在项目上右键点击 -&gt; New -&gt; File and Code Templates，在左边可以设置文件类型，右边可以设置模板代码</p>
+<ol>
+<li>webstorm中设置按某个单词出来代码块</li>
+</ol>
+<ul>
+<li>Settings -&gt; Eitor -&gt; Live Templates -&gt;JavaScript -&gt; 按右面的加号，选Live Template -&gt; Abbreviation:你要规定的单词(比如func) -&gt;<br>Template text:(比如)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">;(function()&#123;</div><div class="line">    $END$</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>最后 Define-&gt;JavaScript</li>
+</ul>
 
           
         
@@ -932,7 +1687,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/09/json与jsonp区别浅析/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/即时反应的input和propertychange方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -951,7 +1706,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/09/json与jsonp区别浅析/" itemprop="url">json与jsonp区别</a></h1>
+                <a class="post-title-link" href="/2017/12/12/即时反应的input和propertychange方法/" itemprop="url">即时反应的input和propertychange方法</a></h1>
         
 
         <div class="post-meta">
@@ -963,8 +1718,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T17:04:00+08:00">
-                2017-11-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T00:00:00+08:00">
+                2017-12-12
               </time>
             
 
@@ -986,8 +1741,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/input/" itemprop="url" rel="index">
+                    <span itemprop="name">input</span>
                   </a>
                 </span>
 
@@ -1026,36 +1781,25 @@
         
           
             <blockquote>
-<p>不同源（同源概念：同协议，同域名和同端口）的网站之间，只有像img、script、iframe这类可以指定src属性的标签有跨域获取别人网站上数据(图片，脚本，源文件其实都是数据)的能力，所以如果B,C网站想获取A网站上提供的数据(json文本格式)怎么做到呢？</p>
-</blockquote>
+<p>在web开发中，我们有时会需要动态监听输入框值的变化，当使用onkeydown、onkeypress、onkeyup作为监听事件时，会发现一些复制粘贴等操作用不了，同时，在处理组合快键键的时候也很麻烦。这时候我们需要更专业的解决方案：HTML5标准事件oninput、onchange和IE专属的事件properchange。</p>
 <ol>
-<li><p>A网站把json 对象用符合js语法的形式包裹起来，放到一个open.js文件中<code>foo({&quot;name&quot;:&quot;B&quot;,&quot;age&quot;:23})</code></p>
-</li>
-<li><p>B网站通过<code>&lt;script src=&quot;http://www.A.com/open.js&quot;&gt;&lt;/script&gt;</code>获取的A网站上的数据</p>
-</li>
-<li><p>B网站脚本必须有</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function foo(data) &#123;</div><div class="line">    console.log(data);</div><div class="line">    //ToDo..</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>有一个C网站也想获取A网站上的这个数据，但是C网站不想定义名为foo的函数来处理数据，C网站想定义名为fool的函数来处理数据，但是这样是不可行的，因为A网站设定了规范，所有其他网站想获取自己网站的数据，必须通过foo函数来处理数据，这就很有局限性了，<br>就有牛的开发者使用了动态生成js文件的方法,php版本如下：open.php</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">header(&apos;Content-type: application/javascript&apos;);</div><div class="line">$jsonCallback = htmlspecialchars($_REQUEST [&apos;callback&apos;]); //获取请求者自定义的回调函数名</div><div class="line">$jsonData = &apos;&#123;&quot;name&quot;:&quot;B&quot;,&quot;age&quot;:23&#125;&apos;; //待返回的json数据</div><div class="line">ecco $jsonCallback  . &quot;(&quot; . $jsonData . &quot;)&quot;; //输出jsonp格式的数据，即一行函数调用语句</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>于是网站B用<code>&lt;script src=&quot;http://www.A.com/open.php?callback=foo&quot;&gt;&lt;/script&gt;</code>来请求数据，返回给B的脚本文件内容是:<code>foo({&quot;name&quot;:&quot;B&quot;,&quot;age&quot;:23})</code>;网站C用<code>&lt;script src=&quot;http://www.A.com/open.php?callback=fool&quot;&gt;&lt;/script&gt;</code>来请求数据，返回给C的脚本文件内容是:<code>fool({&quot;name&quot;:&quot;B&quot;,&quot;age&quot;:23})</code>;这样大家都取到了想要的数据，并且可以用自己想用的函数名命名数据处理函数</p>
-</li>
+<li>oninput&amp;onchange：</li>
 </ol>
-<blockquote>
-<p>总结：jsonp全名叫做json with padding,很形象，就是把json 对象用符合js语法的形式包裹起来以使其它网站可以请求得到，也就是将json数据封装成js文件传送给其他网站。json是想要的数据，jsonp是达到这个目的而普遍采用的一种方法，当然最终获得和处理的还是json数据，所以说json是目的，jsonp只是获取json数据的手段。jsonp只有在跨域获取数据的时候才会用到。</p>
-</blockquote>
-<h4 id="ajax里的跨域获取数据"><a href="#ajax里的跨域获取数据" class="headerlink" title="ajax里的跨域获取数据"></a>ajax里的跨域获取数据</h4><ul>
-<li><p>同源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    url:&quot;person.json&quot;,</div><div class="line">    success:function(data)&#123;</div><div class="line">        console.log(data);</div><div class="line">        //ToDo...</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>跨域</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    url:&quot;http://www.A.com/open.php?callback=?&quot;,</div><div class="line">    dataTupe:&quot;json&quot;,</div><div class="line">    success:function(data)&#123;</div><div class="line">        console.log(data);</div><div class="line">        //ToDo...</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>oninput和onchange都是事件对象，当输入框的值发生改变时触发该事件。不同的是，oninput是在值改变时立即触发，而onchange是在值改变后失去焦点才触发，并且可以用在非输入框中，如：select等。</li>
+</ul>
+<ol>
+<li>propertychange：</li>
+</ol>
+<ul>
+<li>功能同oninput，用以替代oninput在IE9以下的不兼容性。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(function()&#123; //这里bind同时绑定了input和propertychange两个方法。</div><div class="line"></div><div class="line">    $(&apos;#username&apos;).bind(&apos;input propertychange&apos;, function() &#123;  </div><div class="line"></div><div class="line">    $(&apos;#result&apos;).html($(this).val().length + &apos; characters&apos;);  </div><div class="line"></div><div class="line">  &#125;);  </div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
-<p>总结：同源的时候直接取就行，跨域的时候需要拐个弯来达到目的。大多数jsonp请求都是ajax,jquery已经把jsonp封装进ajax,需要注意的一点就是不同的网站提供的数据接口$_REQUEST[‘CALLBACK’]中不一定绝对是callback也可能是cb,cbkk等，具体使用时要阅读服务端提供的有关接口使用的详细文档。</p>
 </blockquote>
+<p>3.onblur:</p>
+<ul>
+<li>onblur是鼠标焦点离开控件，比如选中别的控件</li>
+</ul>
 
           
         
@@ -1096,6 +1840,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1143,7 +1891,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1153,10 +1901,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
-                  <span class="site-state-item-count">2</span>
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -1165,7 +1913,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

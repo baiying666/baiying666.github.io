@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html,js,锚点," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第一种方法描点用a标签 这种方法缺点是点击锚点之后，浏览器的URL会发生变化，如果刷新可能会出现问题。   12345678&amp;lt;h2&amp;gt;    &amp;lt;a href=&amp;quot;#div1&amp;quot;&amp;gt;to div1&amp;lt;/a&amp;gt;    &amp;lt;a href=&amp;quot;#div2&amp;quot;&amp;gt;to div2&amp;lt;/a&amp;gt;    &amp;lt;a href=&amp;quot;#">
+<meta name="keywords" content="html,js,锚点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="锚点">
+<meta property="og:url" content="http://naivebai.site/2017/11/14/锚点/index.html">
+<meta property="og:site_name" content="Belle&#39;s blog">
+<meta property="og:description" content="第一种方法描点用a标签 这种方法缺点是点击锚点之后，浏览器的URL会发生变化，如果刷新可能会出现问题。   12345678&amp;lt;h2&amp;gt;    &amp;lt;a href=&amp;quot;#div1&amp;quot;&amp;gt;to div1&amp;lt;/a&amp;gt;    &amp;lt;a href=&amp;quot;#div2&amp;quot;&amp;gt;to div2&amp;lt;/a&amp;gt;    &amp;lt;a href=&amp;quot;#">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-14T06:44:48.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="锚点">
+<meta name="twitter:description" content="第一种方法描点用a标签 这种方法缺点是点击锚点之后，浏览器的URL会发生变化，如果刷新可能会出现问题。   12345678&amp;lt;h2&amp;gt;    &amp;lt;a href=&amp;quot;#div1&amp;quot;&amp;gt;to div1&amp;lt;/a&amp;gt;    &amp;lt;a href=&amp;quot;#div2&amp;quot;&amp;gt;to div2&amp;lt;/a&amp;gt;    &amp;lt;a href=&amp;quot;#">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://naivebai.site/2017/11/14/锚点/"/>
+
+
+
+
+
+  <title>锚点 | Belle's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/baiying666/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Belle's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益404">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/11/14/锚点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">锚点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-14T00:00:00+08:00">
+                2017-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="第一种方法描点用a标签"><a href="#第一种方法描点用a标签" class="headerlink" title="第一种方法描点用a标签"></a>第一种方法描点用a标签</h5><ul>
+<li><p>这种方法缺点是点击锚点之后，浏览器的URL会发生变化，如果刷新可能会出现问题。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;</div><div class="line">    &lt;a href=&quot;#div1&quot;&gt;to div1&lt;/a&gt;</div><div class="line">    &lt;a href=&quot;#div2&quot;&gt;to div2&lt;/a&gt;</div><div class="line">    &lt;a href=&quot;#div3&quot;&gt;to div3&lt;/a&gt;</div><div class="line">&lt;/h2&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;div1&lt;/div&gt;</div><div class="line">&lt;div id=&quot;div2&quot;&gt;div2&lt;/div&gt;</div><div class="line">&lt;div id=&quot;div3&quot;&gt;div3&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="第二种方法是在js事件中通过window-location-hash-“div1”-跳转，但地址也会发生变化，如果刷新可能会出现问题。"><a href="#第二种方法是在js事件中通过window-location-hash-“div1”-跳转，但地址也会发生变化，如果刷新可能会出现问题。" class="headerlink" title="第二种方法是在js事件中通过window.location.hash = “div1” 跳转，但地址也会发生变化，如果刷新可能会出现问题。"></a>第二种方法是在js事件中通过window.location.hash = “div1” 跳转，但地址也会发生变化，如果刷新可能会出现问题。</h5><h5 id="第三种方法是用animate属性，点击锚点后，页面滚到相应的DIV。接着第一种方法代码，具体添加如下代码："><a href="#第三种方法是用animate属性，点击锚点后，页面滚到相应的DIV。接着第一种方法代码，具体添加如下代码：" class="headerlink" title="第三种方法是用animate属性，点击锚点后，页面滚到相应的DIV。接着第一种方法代码，具体添加如下代码："></a>第三种方法是用animate属性，点击锚点后，页面滚到相应的DIV。接着第一种方法代码，具体添加如下代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot;</div><div class="line">          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</div><div class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">        height: 800px;</div><div class="line">        width: 400px;</div><div class="line">        border:2px solid black;</div><div class="line">    &#125;</div><div class="line">    h2&#123;</div><div class="line">        position: fixed;</div><div class="line">        margin:50px 500px;</div><div class="line">    &#125;</div><div class="line">    a&#123;</div><div class="line">        border:1px solid red;</div><div class="line">        cursor:pointer;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h2&gt;</div><div class="line">    &lt;a id=&quot;a1&quot;&gt;to div1&lt;/a&gt;</div><div class="line">    &lt;a id=&quot;a2&quot;&gt;to div2&lt;/a&gt;</div><div class="line">    &lt;a id=&quot;a3&quot;&gt;to div3&lt;/a&gt;</div><div class="line">&lt;/h2&gt;</div><div class="line">&lt;div id=&quot;div1&quot;&gt;div1&lt;/div&gt;</div><div class="line">&lt;div id=&quot;div2&quot;&gt;div2&lt;/div&gt;</div><div class="line">&lt;div id=&quot;div3&quot;&gt;div3&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    $(document).ready(function () &#123;</div><div class="line">        $(&apos;#a1&apos;).click(function () &#123;</div><div class="line">            $(&apos;html body&apos;).animate(&#123;scrollTop:$(&apos;#div1&apos;).offset().top&#125;,&#123;duration:5000,easing:&quot;swing&quot;&#125;);</div><div class="line">            return false;</div><div class="line">        &#125;);</div><div class="line">        $(&apos;#a2&apos;).click(function () &#123;</div><div class="line">            $(&apos;html body&apos;).animate(&#123;scrollTop:$(&apos;#div2&apos;).offset().top&#125;,&#123;duration:5000,easing:&quot;swing&quot;&#125;);</div><div class="line">            return false;</div><div class="line">        &#125;);</div><div class="line">        $(&apos;#a3&apos;).click(function () &#123;</div><div class="line">            $(&apos;html body&apos;).animate(&#123;scrollTop:$(&apos;#div3&apos;).offset().top&#125;,&#123;duration:5000,easing:&quot;swing&quot;&#125;);</div><div class="line">            return false;</div><div class="line">        &#125;)</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>这样做的好处是：URL地址不会变，同时点击锚点时会自动响应scroll事件，不需要重新绑定。</li>
+</ul>
+<h5 id="第四种方法是用js的scrollIntoView方法，直接用"><a href="#第四种方法是用js的scrollIntoView方法，直接用" class="headerlink" title="第四种方法是用js的scrollIntoView方法，直接用:"></a>第四种方法是用js的scrollIntoView方法，直接用:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;#a1&apos;).click(function()&#123;</div><div class="line">	document.getElementById(&quot;div1&quot;).scrollIntoView();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>这种方法的好处是URL不会变，同时能够响应相应的scroll事件，不需要算法什么的。</li>
+<li>推荐大家使用第四种。</li>
+</ul>
+<h5 id="点击锚点跳转页面到相应的位置"><a href="#点击锚点跳转页面到相应的位置" class="headerlink" title="点击锚点跳转页面到相应的位置"></a>点击锚点跳转页面到相应的位置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">锚点所在页面：</div><div class="line">&lt;a href=&quot;newsList.html?id=gsdt&quot;&gt;公司动态&lt;/a&gt;</div><div class="line">&lt;a href=&quot;newsList.html?id=hyxw&quot;&gt;行业新闻&lt;/a&gt;</div><div class="line">&lt;a href=&quot;newsList.html?id=zcfg&quot; &gt;政策法规&lt;/a&gt;</div><div class="line"></div><div class="line">newsList.html页面：</div><div class="line">&lt;div id=&quot;gsdt&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;hyxw&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div id=&quot;zcfg&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">$(function() &#123;</div><div class="line">  var url = window.location.toString();</div><div class="line">  var id = url.split(&apos;#&apos;)[1];</div><div class="line">  if (id) &#123;</div><div class="line">    var t = $(&apos;#&apos; + id).offset().top;</div><div class="line">    $(window).scrollTop(t);</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h5 id="点击锚点跳转页面到对应的tab选项"><a href="#点击锚点跳转页面到对应的tab选项" class="headerlink" title="点击锚点跳转页面到对应的tab选项"></a>点击锚点跳转页面到对应的tab选项</h5><ul>
+<li><p>index.html页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;a href=&quot;index.html?id=gsdt&quot;&gt;公司动态&lt;/a&gt;</div><div class="line">&lt;a href=&quot;index.html?id=hyxw&quot;&gt;行业新闻&lt;/a&gt;</div><div class="line">&lt;a href=&quot;index.html?id=zcfg&quot; &gt;政策法规&lt;/a&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>newsList.html页面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;meta name=&quot;viewport&quot;</div><div class="line">          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</div><div class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">        margin:0;padding:0;</div><div class="line">    &#125;</div><div class="line">    li&#123;</div><div class="line">        list-style: none;</div><div class="line">    &#125;</div><div class="line">    .tab&#123;</div><div class="line">        width:304px;</div><div class="line">        border:1px solid red;</div><div class="line">    &#125;</div><div class="line">    .lists li&#123;</div><div class="line">        float:left;</div><div class="line">        width:100px;</div><div class="line">        height: 30px;</div><div class="line">        line-height: 30px;</div><div class="line">        text-align: center;</div><div class="line">        border-bottom:1px solid red;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    li+li&#123;</div><div class="line">        border-left:1px solid red;</div><div class="line">    &#125;</div><div class="line">    .oDiv div&#123;</div><div class="line">        margin-top:30px;</div><div class="line">        height: 200px;</div><div class="line">        line-height: 200px;</div><div class="line">        text-align: center;</div><div class="line">        display: none;</div><div class="line">    &#125;</div><div class="line">    .active&#123;</div><div class="line">        background: green;</div><div class="line">    &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=&quot;tab&quot;&gt;</div><div class="line">    &lt;ul class=&quot;lists&quot;&gt;</div><div class="line">        &lt;li id=&quot;gsdt&quot;&gt;公司动态&lt;/li&gt;</div><div class="line">        &lt;li id=&quot;hyxw&quot;&gt;行业新闻&lt;/li&gt;</div><div class="line">        &lt;li id=&quot;zcfg&quot;&gt;政策法规&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;div class=&quot;oDiv&quot;&gt;</div><div class="line">        &lt;div&gt;公司动态详情详情详情详情详情详情详情&lt;/div&gt;</div><div class="line">        &lt;div&gt;行业新闻详情详情详情详情详情详情详情&lt;/div&gt;</div><div class="line">        &lt;div&gt;政策法规详情详情详情详情详情详情详情&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    $(function() &#123;</div><div class="line">        // 获取元素</div><div class="line">        var $lis = $(&apos;.lists&gt;li&apos;);</div><div class="line">        var $divs = $(&apos;.oDiv&gt;div&apos;);</div><div class="line">        // 让索引为0的显示</div><div class="line">        $lis.eq(0).addClass(&apos;active&apos;);</div><div class="line">        $divs.eq(0).show();</div><div class="line">        // 绑定滑过事件</div><div class="line">        $lis.on(&apos;click&apos;, function () &#123;</div><div class="line">            var ind = $(this).index(); // 获取当前元素的索引</div><div class="line">            $(this).addClass(&apos;active&apos;).siblings(&apos;li&apos;).removeClass(&apos;active&apos;);</div><div class="line">            $divs.eq(ind).show().siblings().hide();</div><div class="line">        &#125;);</div><div class="line">        var url = window.location.toString();</div><div class="line">        var id = url.split(&apos;=&apos;)[1];</div><div class="line">        console.log(id);</div><div class="line">        if (id) &#123;</div><div class="line">            var ele = $(&apos;#&apos; + id);</div><div class="line">            console.log(ele);</div><div class="line">            var index = $(ele).index();</div><div class="line">            $(ele).addClass(&quot;active&quot;).siblings(&apos;li&apos;).removeClass(&quot;active&quot;);</div><div class="line">            $divs.eq(index).show().siblings().hide()</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+        <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+        </div>
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/锚点/" rel="tag"># 锚点</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/13/数组方法总结/" rel="next" title="js数组方法总结">
+                <i class="fa fa-chevron-left"></i> js数组方法总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/15/pc端布局结构/" rel="prev" title="PC端页面公共结构布局">
+                PC端页面公共结构布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="belle" />
+            
+              <p class="site-author-name" itemprop="name">belle</p>
+              <p class="site-description motion-element" itemprop="description">爱学习的小萝卜</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/baiying666" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/d3839b4fa45b" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://segmentfault.com/u/yiqianlvye" target="_blank" title="SegmentFault">
+                    
+                      <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://juejin.im/user/59f82540f265da4335620f55" target="_blank" title="掘金">
+                    
+                      <i class="fa fa-fw fa-globe"></i>掘金</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一种方法描点用a标签"><span class="nav-number">1.</span> <span class="nav-text">第一种方法描点用a标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二种方法是在js事件中通过window-location-hash-“div1”-跳转，但地址也会发生变化，如果刷新可能会出现问题。"><span class="nav-number">2.</span> <span class="nav-text">第二种方法是在js事件中通过window.location.hash = “div1” 跳转，但地址也会发生变化，如果刷新可能会出现问题。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三种方法是用animate属性，点击锚点后，页面滚到相应的DIV。接着第一种方法代码，具体添加如下代码："><span class="nav-number">3.</span> <span class="nav-text">第三种方法是用animate属性，点击锚点后，页面滚到相应的DIV。接着第一种方法代码，具体添加如下代码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第四种方法是用js的scrollIntoView方法，直接用"><span class="nav-number">4.</span> <span class="nav-text">第四种方法是用js的scrollIntoView方法，直接用:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#点击锚点跳转页面到相应的位置"><span class="nav-number">5.</span> <span class="nav-text">点击锚点跳转页面到相应的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#点击锚点跳转页面到对应的tab选项"><span class="nav-number">6.</span> <span class="nav-text">点击锚点跳转页面到对应的tab选项</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">belle</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
+
+

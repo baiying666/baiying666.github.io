@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="es6,babel," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ECMScript 是JavaScript标准规范 es6是在2015年发布的，也称为es2015，每年都会有一个小改动的版本发布，称为es2016,es2917…，因此es6既是一个历史名词，也是一个泛指，指 es2015标准有时也泛指JavaScript的下一代标准语言  语法提案的批准流程 任何人都可以向标准委员会（又称 TC39 委员会）提案，要求修改语言标准。一种新的语法从提案到变成">
+<meta name="keywords" content="es6,babel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6-babel">
+<meta property="og:url" content="http://naivebai.site/2018/06/19/es6-babel/index.html">
+<meta property="og:site_name" content="Belle&#39;s blog">
+<meta property="og:description" content="ECMScript 是JavaScript标准规范 es6是在2015年发布的，也称为es2015，每年都会有一个小改动的版本发布，称为es2016,es2917…，因此es6既是一个历史名词，也是一个泛指，指 es2015标准有时也泛指JavaScript的下一代标准语言  语法提案的批准流程 任何人都可以向标准委员会（又称 TC39 委员会）提案，要求修改语言标准。一种新的语法从提案到变成">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-19T02:00:54.834Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6-babel">
+<meta name="twitter:description" content="ECMScript 是JavaScript标准规范 es6是在2015年发布的，也称为es2015，每年都会有一个小改动的版本发布，称为es2016,es2917…，因此es6既是一个历史名词，也是一个泛指，指 es2015标准有时也泛指JavaScript的下一代标准语言  语法提案的批准流程 任何人都可以向标准委员会（又称 TC39 委员会）提案，要求修改语言标准。一种新的语法从提案到变成">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://naivebai.site/2018/06/19/es6-babel/"/>
+
+
+
+
+
+  <title>es6-babel | Belle's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/baiying666/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Belle's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益404">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/06/19/es6-babel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">es6-babel</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T00:00:00+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es6/" itemprop="url" rel="index">
+                    <span itemprop="name">es6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p> ECMScript 是JavaScript标准规范 es6是在2015年发布的，也称为es2015，每年都会有一个小改动的版本发布，称为es2016,es2917…，因此es6既是一个历史名词，也是一个泛指，指 es2015标准有时也泛指JavaScript的下一代标准语言</p>
+</blockquote>
+<h4 id="语法提案的批准流程"><a href="#语法提案的批准流程" class="headerlink" title="语法提案的批准流程"></a>语法提案的批准流程</h4><blockquote>
+<p>任何人都可以向标准委员会（又称 TC39 委员会）提案，要求修改语言标准。一种新的语法从提案到变成正式标准，需要经历五个阶段。每个阶段的变动都需要由 TC39 委员会批准。<br>Stage 0 展示阶段<br>Stage 1 征求意见阶段<br>Stage 2 草案阶段<br>Stage 3 候选人阶段<br>Stage 4 定案阶段<br>一个提案只要能进入 Stage 2，就差不多肯定会包括在以后的正式标准里面。</p>
+</blockquote>
+<h4 id="使用Babel编译es6（Babel是将es6编译为传统的es5语法）"><a href="#使用Babel编译es6（Babel是将es6编译为传统的es5语法）" class="headerlink" title="使用Babel编译es6（Babel是将es6编译为传统的es5语法）"></a>使用Babel编译es6（Babel是将es6编译为传统的es5语法）</h4><blockquote>
+<p>如何使用Babel编译es6</p>
+<p>一、下载安装babel-cli命令行转码<br>    环境：需要电脑上安装node（node中一般都会自带npm包管理器）<br><code>npm install babel-cli -g</code>把模块安装在全局环境下(在任何项目中，都可以使用命令来编译我们的代码了)<br><code>npm uninstall babel-cli -g</code>把全局下安装的babel模块卸载掉<br> C:\Users\team\AppData\Roaming\npm 当前模块安装在全局环境下的目录（需要记好这个目录）<br>我们观看安装目录发现一些细节需要了解的知识点：<br>1，我们后期之所以可以使用babel的命令，是因为安装在全局环境下后，会生成一些xxx.cmd文件，而这里的xxx就是可以在dos窗口中执行的命令<br><code>babel.cmd</code> 以后就可以使用babel命令了2,执行babel命令后我们可以完成一些编译或者其它任务，主要原因是执行babel命令后，会自动加载一些处理任务的文件</p>
+<p>二、配置.babelrc文件，安装一些语言解析包<br>我们需要把.babelrc文件配置在当前项目的根目录下(这个文件没有文件名，后缀名是.babelrc)<br>注意点：a,在电脑上不能直接创建没有文件名的文件，我们需要使用WS中的new -&gt; file来创建，或者使用命令创建。b,babelrc这个后缀名在某些ws中是不识别的，它其实是一个json文件，我们需要在ws中配置下(让它隶属于json文件)<br>2,在文件中编写内容</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    &#123;</div><div class="line">      "presets":[],//存放的是，我们编译代码的时候需要依赖的语言解析包</div><div class="line">      "plugins":[] //存放的是，我们编译代码的时候需要依赖的插件信息</div><div class="line">    &#125;</div><div class="line">`</div></pre></td></tr></table></figure>
+<p>3, 安装依赖的语言解析包</p>
+<blockquote>
+<p>在当前项目的根目录下安装（不是安装在全局），需要特殊注意的是：要在当前项目根目录中打开dos命令才可以<br><code>npm install babel-preset-latest</code> 安装最新已经发布的语言彼岸准解析模块<br><code>npm install babel-preset-stage-2</code> 安装当前还没有发布但是已经进入草案的语言解析模块（如果你的代码中用到了发布非标准的语法，我们需要安装它）<br>安装成功后在自己的当前项目根目录下，会存在node_modules<br>完成最后.babelrc文件的配置<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    &#123;</div><div class="line">    <span class="attr">"presets"</span>:[</div><div class="line">    <span class="string">"latest"</span>,</div><div class="line">    <span class="string">"stage-2"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"plugins"</span>:[]</div><div class="line">    &#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>三、使用命令来编译js代码<br><code>利用babel -h来查看相关的命令操作</code></p>
+<blockquote>
+<p>一般常用的命令操作有：`babel es61.js -o es51.js 将es61.js文件编译为es51.js<br>babel es6 -d es5 -w 将es6文件夹中的文件编译到es5中</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+        <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+        </div>
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/es6/" rel="tag"># es6</a>
+          
+            <a href="/tags/babel/" rel="tag"># babel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/24/返回和强制刷新页面/" rel="next" title="返回上一页的几种方法">
+                <i class="fa fa-chevron-left"></i> 返回上一页的几种方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/19/es6-对象的解构赋值/" rel="prev" title="es6-对象的解构赋值">
+                es6-对象的解构赋值 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="belle" />
+            
+              <p class="site-author-name" itemprop="name">belle</p>
+              <p class="site-description motion-element" itemprop="description">爱学习的小萝卜</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/baiying666" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/d3839b4fa45b" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://segmentfault.com/u/yiqianlvye" target="_blank" title="SegmentFault">
+                    
+                      <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://juejin.im/user/59f82540f265da4335620f55" target="_blank" title="掘金">
+                    
+                      <i class="fa fa-fw fa-globe"></i>掘金</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法提案的批准流程"><span class="nav-number">1.</span> <span class="nav-text">语法提案的批准流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Babel编译es6（Babel是将es6编译为传统的es5语法）"><span class="nav-number">2.</span> <span class="nav-text">使用Babel编译es6（Babel是将es6编译为传统的es5语法）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">belle</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
+
+

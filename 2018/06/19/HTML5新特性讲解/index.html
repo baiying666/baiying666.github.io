@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTM5," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML:超文本标记语言(页面中不仅只有文字，而且可以呈现出图片、音视频等媒体资源)XHTML:它是HTML比较规范严谨的一代版本XML: 可扩展的标记语言（HTML中使用的标签都是W3C标准中规定的，XML允许我们自己扩展标签的），它的作用不是用来写页面结构的，而是用来存储一些数据的（以自己扩展的标签作为标识，清晰明了的展示出数据结构…）ajax: async javascript and x">
+<meta name="keywords" content="HTM5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5新特性讲解">
+<meta property="og:url" content="http://naivebai.site/2018/06/19/HTML5新特性讲解/index.html">
+<meta property="og:site_name" content="Belle&#39;s blog">
+<meta property="og:description" content="HTML:超文本标记语言(页面中不仅只有文字，而且可以呈现出图片、音视频等媒体资源)XHTML:它是HTML比较规范严谨的一代版本XML: 可扩展的标记语言（HTML中使用的标签都是W3C标准中规定的，XML允许我们自己扩展标签的），它的作用不是用来写页面结构的，而是用来存储一些数据的（以自己扩展的标签作为标识，清晰明了的展示出数据结构…）ajax: async javascript and x">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-19T02:10:49.164Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5新特性讲解">
+<meta name="twitter:description" content="HTML:超文本标记语言(页面中不仅只有文字，而且可以呈现出图片、音视频等媒体资源)XHTML:它是HTML比较规范严谨的一代版本XML: 可扩展的标记语言（HTML中使用的标签都是W3C标准中规定的，XML允许我们自己扩展标签的），它的作用不是用来写页面结构的，而是用来存储一些数据的（以自己扩展的标签作为标识，清晰明了的展示出数据结构…）ajax: async javascript and x">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://naivebai.site/2018/06/19/HTML5新特性讲解/"/>
+
+
+
+
+
+  <title>HTML5新特性讲解 | Belle's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/baiying666/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Belle's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益404">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/06/19/HTML5新特性讲解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML5新特性讲解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T00:00:00+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTM5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTM5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>HTML:超文本标记语言(页面中不仅只有文字，而且可以呈现出图片、音视频等媒体资源)<br>XHTML:它是HTML比较规范严谨的一代版本<br>XML: 可扩展的标记语言（HTML中使用的标签都是W3C标准中规定的，XML允许我们自己扩展标签的），它的作用不是用来写页面结构的，而是用来存储一些数据的（以自己扩展的标签作为标识，清晰明了的展示出数据结构…）<br>ajax: async javascript and xml<br>HTML5：当前HTML最新的一代版本，也是非常成功的一代版本，目前市场上都是基于H5规范进行开发的，它相对于传统的HTML更多的是增加一些有助于开发的内容，对原有规范的修改调整很少<br>XHTML文档声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE html</div><div class="line">        PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</div><div class="line">        &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</div><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>HTML4文档声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</div><div class="line">        &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>HTML5文档声明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt; 声明页面的语言模式，如果页面中出现了英文单词，浏览器会自主发起是否翻译的功能</div><div class="line">&lt;head&gt;</div><div class="line">指定当前页面的编码格式是国际统一编码格式：UTF-8    GGB2312是中国编码(guo biao)</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="HTML5提供的新语法规范"><a href="#HTML5提供的新语法规范" class="headerlink" title="HTML5提供的新语法规范"></a>HTML5提供的新语法规范</h4><p><code>对原有语义化标签的升级</code></p>
+<blockquote>
+<p>语义化标签（标签语义化）：每一个HTML标签都有自己特殊的含义，我们在搭建页面结构的时候，应该让合理的标签做合适的事情<br>HTML5中新增加一些语义化标签：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">article: 文章区域</div><div class="line">header: 头部区域</div><div class="line">main: 主体内容区域</div><div class="line">footer: 尾部区域</div><div class="line">section: 普通区域，用来做区域划分</div><div class="line">figure: 配图区域，一般指的是文章的配图</div><div class="line">figcaption: 配图说明区域</div><div class="line">aside: 与主体内容无关的区域（一般用啦打广告）</div><div class="line">nav: 导航区域</div></pre></td></tr></table></figure></p>
+<p>H5中新增加一些标记标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mark: 用来标记需要高亮显示的文本</div><div class="line">time: 用啦标记日期文本</div></pre></td></tr></table></figure></p>
+<p>H5中对原有标签还有一些调整<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">strong: 之前是加粗，现在是重点朗读（效果还是加粗，但是语义不一样了）</div><div class="line">small: 之前是变小，现在是附属细则（效果还是变小）</div><div class="line">hr: 之前是一条直线，现在是分隔线，用来分隔两个区域</div></pre></td></tr></table></figure></p>
+<p>H5中删除一些不经常使用的标签：这里的删除不是不让用（用了也不会报错），只是按照最新标准没有语义了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">font:之前是标记字体修改某些文字样式的，现在我们不建议使用了</div><div class="line">center:之前是使某些内容居中</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>目前不管是在PC端开发还是移动端开发，我们更应该使用H5规范的语义化标签搭建页面的结构<br>问题：<br>IE6~8中不能识别这些新增加的语义化标签，我们无法为其设置具体的样式：结局方案：在当前页面的HEAD中(css后)，我们导入一个JS插件：html5.min.js，它就是用来把页面中所有用到的不兼容的H5语义化标签进行兼容处理<br>1,把页面中所有不兼容的标签进行替换<br>2,把css中使用标签选择器设置的样式（标签是H5标签）也替换成其它方式，但是这样比较耗性能，所以我们最好自己写样式类<br>标准浏览器中不需要引用，只有ie6~8中使用(使用条件注释来区分浏览器)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">    &lt;script src=&quot;js/html5.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;!--[end if]&gt;</div><div class="line">条件注释中的代码要严格区分大小写以及空格等细节问题</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="H5中对于表单元素的升级"><a href="#H5中对于表单元素的升级" class="headerlink" title="H5中对于表单元素的升级"></a>H5中对于表单元素的升级</h4><blockquote>
+<p>传统表单元素<br>form input text password radio checkbox button submit reset file hidden<br>button<br>select<br>label<br>textarea<br>submit点击按钮会跳转到form的action对应的地址（表单提交）,在传统的非前后端分离的项目中，我们会在ACTION中指定一个程序处理页面（一般是由后台语言（PHP\JSP\ASP…）完成），我们利用它的默认行为把数据发送给处理页面，由处理页面完成数据的存储等操作。<br>现有前后端完全分离项目中，我们都是在js中手动获取到用户输入的内容，并且通过ajax等技术发送给服务器存储或者处理（此时我们需要阻止submit默认行为）<br>…<br>单选框需要name进行分组，一组中只能选中一个,label有一个for属性，指向对应表单元素的ID，操作LABEL中的内容，也相当于在操作表单元素（经常用于单选或者复选框上）<br>H5对于表单的升级<br>1、给input设置了很多新的类型<br>search<br>email<br>tel<br>number<br>rangle  min max step value<br>color  会调取颜色面板<br>date<br>time<br>..<br>优势：1、功能强大了  2、使用合适的类型，在移动端开发的时候，用户输入可以调取出最符合内容格式的虚拟键盘，方便用户操作<br>部分类型提供了表单验证（内置验证机制）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        #emailInp&#123;</div><div class="line">            border: 1px solid #ccc;</div><div class="line">            height: 35px;</div><div class="line">            line-height: 35px;</div><div class="line">            width: 200px;</div><div class="line">            margin:50px;</div><div class="line">        &#125;</div><div class="line">        #emailInp:valid&#123;</div><div class="line">            border: 1px solid green;</div><div class="line">        &#125;</div><div class="line">        #emailInp:invalid&#123;</div><div class="line">            border: 1px solid red;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;input type=&quot;email&quot; id=&quot;emailInp&quot;&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script src=&quot;http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    $(&apos;#emailInp&apos;).on(&apos;blur&apos;,function () &#123;</div><div class="line">        //console.dir(this);  有个方法checkValidity()：调取内置的验证机制，验证当前输入内容格式是否正确(空也是正确的) true：正确  false：不正确  内置机制和我们自己写的正则验证不太一样，但是可以凑合用，css中可以验证，js中也可以验证</div><div class="line">       if(this.checkValidity())&#123;</div><div class="line">           $(this).css(&apos;borderColor&apos;,&apos;green&apos;);</div><div class="line">       &#125;else&#123;</div><div class="line">           $(this).css(&apos;borderColor&apos;,&apos;red&apos;);</div><div class="line">       &#125;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>2、新增加了placeholder,给表单框做默认的信息提示<br>3、二级下拉框(select一级下拉框)  比起select多了一个你输入关键字到你的选项中自动筛选的功能，很强大<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot;  list=&quot;department&quot;&gt;</div><div class="line">&lt;dataList id=&quot;department&quot;&gt;</div><div class="line">    &lt;option value=&quot;市场部&quot;&gt;市场部&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;销售部&quot;&gt;销售部&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;技术部&quot;&gt;技术部&lt;/option&gt;</div><div class="line">&lt;/dataList&gt;</div></pre></td></tr></table></figure></p>
+<p>需要注意的是以上HTML5对表单的升级，对ie的兼容性都不是很好，有的ie9和ie10都不兼容，而且没办法处理兼容，所以我们一般在移动端使用这些HTML标签，pc端还是延续传统的操作办法来操作<br>H5中的表单验证内置规则不是特别好，所以真实项目中的表单验证，依然延续传统的正则验证完成</p>
+<h4 id="解决placeholder的兼容处理-新的一种组件封装思想"><a href="#解决placeholder的兼容处理-新的一种组件封装思想" class="headerlink" title="解决placeholder的兼容处理(新的一种组件封装思想)"></a>解决placeholder的兼容处理(新的一种组件封装思想)</h4><p>整个ie浏览器对placeholder兼容性都不好，ie10及以上，虽然兼容，但是文本框获取焦点后，提示信息就消失了<br>ie9及以下不兼容这个属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="H5中其它新增内容"><a href="#H5中其它新增内容" class="headerlink" title="H5中其它新增内容"></a>H5中其它新增内容</h4><blockquote>
+<p>增加了新的媒体解决方案<br>音频：audio<br>视频：video<br>传统的音视频播放是基于flash来完成的，需要浏览器中安装adobe flash player插件<br>现在只需要基于audio或者video播放即可，但是对于音视频的格式有限制，对于浏览器也有限制<br>移动端对于flash的支持不好，但基本上都支持audio和video<br>pc端的ie浏览器（低版本）不支持audio和video,但是支持flash<br>一般如果在移动端我们就用audio和vedio就可以了，在pc端一般我们用人家已经开发好的视频播放器(例如，腾讯，爱奇异)</p>
+<p>H5中增加了canvas绘图，它是一个画布，允许我们在js中通过代码绘制图形以及实现一些好玩的动画，百度统计图插件:Echarts就是基于canvas开发的<br>提供了很多强大的JS API<br>API:凡是提供一个供别人调取使用的，都可以称之为接口，例如：使用AJAX从服务器端获取数据，需要一个URL地址，这个地址就是一个API，浏览器提供给我们很多常用的方法，每一个方法都可以叫做API，API是一个泛指</p>
+</blockquote>
+<p><code>本地存储</code></p>
+<blockquote>
+<p>webStorage:分为两大类：<br>localStorage:本地信息存储<br>sectionStorage:本地会话存储<br>在没有H5存储之前，我们都是用cookie做的本地存储<br>缓存机制和本地存储是两个机制，缓存大多存在虚拟内存中，叫cache，是浏览器的机制</p>
+</blockquote>
+<p><code>获取本机地理位置</code></p>
+<blockquote>
+<p>通过H5可以获取当前用户地理位置（精度、维度、精准度…），再结合第三方地图（高德地图、百度地图、腾讯地图…）API接口，实现一些生活服务的推荐等。</p>
+</blockquote>
+<p><code>提供了新的通讯方式：websocket</code></p>
+<blockquote>
+<p>想要实现实时通讯类的产品，基本上现在都是基于socket.io这个框架来完成的</p>
+</blockquote>
+<p><code>提供了操作手机硬件功能的API</code></p>
+<blockquote>
+<p>调取手机的重力感应器，实现摇一摇，或者实现一些小游戏<br>调取手机的摄像头或者通讯录等<br>不是所有的手机浏览器都支持这些功能，即使支持这些功能的浏览器，在实现效果上也是不理想的（不稳定、卡顿等）</p>
+</blockquote>
+<p><code>H5离线缓存:manifest</code></p>
+<blockquote>
+<p>第一次联网请求完成页面，把信息缓存到本地，下一次即使断网的情况下，也可以看到上一次的信息</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+        <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+        </div>
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTM5/" rel="tag"># HTM5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/19/es6中类的定义/" rel="next" title="es6中类的定义">
+                <i class="fa fa-chevron-left"></i> es6中类的定义
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/19/css选择器/" rel="prev" title="CSS3选择器与jQuery选择器">
+                CSS3选择器与jQuery选择器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="belle" />
+            
+              <p class="site-author-name" itemprop="name">belle</p>
+              <p class="site-description motion-element" itemprop="description">爱学习的小萝卜</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/baiying666" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/d3839b4fa45b" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://segmentfault.com/u/yiqianlvye" target="_blank" title="SegmentFault">
+                    
+                      <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://juejin.im/user/59f82540f265da4335620f55" target="_blank" title="掘金">
+                    
+                      <i class="fa fa-fw fa-globe"></i>掘金</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML5提供的新语法规范"><span class="nav-number">1.</span> <span class="nav-text">HTML5提供的新语法规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#H5中对于表单元素的升级"><span class="nav-number">2.</span> <span class="nav-text">H5中对于表单元素的升级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决placeholder的兼容处理-新的一种组件封装思想"><span class="nav-number">3.</span> <span class="nav-text">解决placeholder的兼容处理(新的一种组件封装思想)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#H5中其它新增内容"><span class="nav-number">4.</span> <span class="nav-text">H5中其它新增内容</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">belle</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
+
+

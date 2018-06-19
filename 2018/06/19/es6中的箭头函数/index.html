@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="es6,箭头函数," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="箭头函数的基本语法：123456789101112131415161718192021222324let fn = function (x,y) &amp;#123;    console.log(x+y);&amp;#125;fn(x,y);//以上函数用es6语法改写let fn1=(x,y)=&amp;gt;&amp;#123;    return x+y;&amp;#125;//如果大括号里的内容只有return 一个值这么简">
+<meta name="keywords" content="es6,箭头函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6中的箭头函数">
+<meta property="og:url" content="http://naivebai.site/2018/06/19/es6中的箭头函数/index.html">
+<meta property="og:site_name" content="Belle&#39;s blog">
+<meta property="og:description" content="箭头函数的基本语法：123456789101112131415161718192021222324let fn = function (x,y) &amp;#123;    console.log(x+y);&amp;#125;fn(x,y);//以上函数用es6语法改写let fn1=(x,y)=&amp;gt;&amp;#123;    return x+y;&amp;#125;//如果大括号里的内容只有return 一个值这么简">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-19T02:02:07.165Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6中的箭头函数">
+<meta name="twitter:description" content="箭头函数的基本语法：123456789101112131415161718192021222324let fn = function (x,y) &amp;#123;    console.log(x+y);&amp;#125;fn(x,y);//以上函数用es6语法改写let fn1=(x,y)=&amp;gt;&amp;#123;    return x+y;&amp;#125;//如果大括号里的内容只有return 一个值这么简">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://naivebai.site/2018/06/19/es6中的箭头函数/"/>
+
+
+
+
+
+  <title>es6中的箭头函数 | Belle's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/baiying666/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Belle's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益404">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/06/19/es6中的箭头函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">es6中的箭头函数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T00:00:00+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es6/" itemprop="url" rel="index">
+                    <span itemprop="name">es6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>箭头函数的基本语法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params">x,y</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(x+y);</div><div class="line">&#125;</div><div class="line">fn(x,y);</div><div class="line"><span class="comment">//以上函数用es6语法改写</span></div><div class="line"><span class="keyword">let</span> fn1=<span class="function">(<span class="params">x,y</span>)=&gt;</span>&#123;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">&#125;</div><div class="line"><span class="comment">//如果大括号里的内容只有return 一个值这么简单，我们可以这么写</span></div><div class="line"><span class="keyword">let</span> fn2 = <span class="function">(<span class="params">x,y</span>)=&gt;</span> x+y;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">let</span> fn3 = <span class="function"><span class="keyword">function</span> (<span class="params">n = <span class="number">0</span></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> x = <span class="number">10</span>,</div><div class="line">        y = <span class="number">20</span>;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">&#125;</div><div class="line"><span class="comment">//上述函数改写</span></div><div class="line"><span class="keyword">let</span> fn4 = <span class="function">(<span class="params">n=<span class="number">0</span></span>)=&gt;</span>&#123;</div><div class="line">    <span class="keyword">let</span> x = <span class="number">10</span>,</div><div class="line">        y = <span class="number">20</span>;</div><div class="line">    <span class="keyword">return</span> x+y+n;</div><div class="line">&#125;</div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure></p>
+<p>箭头函数中不支持arguments<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fn = <span class="function">(<span class="params">A,...arg</span>)=&gt;</span>&#123;</div><div class="line">    <span class="comment">//不支持arguments没事，我们使用es6中的剩余运算符...来获取传递进来的所有参数值(使用剩余运算符接收到的结果本身就是一个数组，不需要再转换了)</span></div><div class="line">    <span class="built_in">console</span>.log(arg); <span class="comment">// 20 30 40</span></div><div class="line">    <span class="built_in">console</span>.log(arg <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">//true</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">eval</span>(arg.join(<span class="string">'+'</span>));</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(fn(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>));</div><div class="line"></div><div class="line"><span class="comment">//上述函数还可以简写为：</span></div><div class="line"><span class="keyword">let</span> fn1 = <span class="function">(<span class="params">...arg</span>)=&gt;</span> <span class="built_in">eval</span>(arg.join(<span class="string">'+'</span>)); <span class="comment">//任意数求和</span></div></pre></td></tr></table></figure></p>
+<p>箭头函数this问题<br>复习普通函数中this问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    name : <span class="string">'obj'</span>,</div><div class="line">    fn()&#123;</div><div class="line">        <span class="comment">// 这样处理和下面sum的处理是一样的</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">    &#125;,</div><div class="line">    sum:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.fn(); <span class="comment">// this：obj</span></div><div class="line"><span class="comment">//普通函数执行this指向，看函数执行前面是否有点，有点，点前面是谁，this就是谁，没有点this指向window或者undefined（严格模式下）</span></div><div class="line"><span class="built_in">document</span>.body.onclick = obj.fn; <span class="comment">//this:body</span></div><div class="line">setTimeout(obj.fn,<span class="number">1000</span>); <span class="comment">// this:window</span></div><div class="line">obj.fn.call(<span class="number">12</span>);<span class="comment">// this:12</span></div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    name : <span class="string">'obj'</span>,</div><div class="line">    fn:<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//不管我们怎么去操作，最后this都指向window：箭头函数中没有this指向问题，也可以理解为箭头函数中没有this，用到的this都是所在宿主环境(它的上级作用域，对象组成的大括号不是块级作用域，所以上级作用域是window)中的this,</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.fn(); <span class="comment">// this：window</span></div><div class="line"><span class="built_in">document</span>.body.onclick = obj.fn; <span class="comment">//this:window</span></div><div class="line">setTimeout(obj.fn,<span class="number">1000</span>); <span class="comment">// this:window</span></div><div class="line">obj.fn.call(<span class="number">12</span>);<span class="comment">// this:window</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>以上说明我们在实战项目中，不是要把所有的函数都改为箭头函数，根据自身需要修改即可（例如：我们需要让函数中的this是宿主环境中的this，我们才来使用箭头函数；或者不涉及this问题，我们想让代码写起来简单一些也可以使用箭头函数）<br>改变定时器中的this指向的三种方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj1 = &#123;</div><div class="line">    name:<span class="string">'obj'</span>,</div><div class="line">    fn()&#123;</div><div class="line">        <span class="comment">// this:obj</span></div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// this:本来是window</span></div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">        &#125;.bind(obj1),<span class="number">10000</span>);</div><div class="line">        <span class="comment">//如果想让定时器中函数的this变为obj，可以使用bind，但是bind不兼容</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj1.fn();</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">let</span> obj2 = &#123;</div><div class="line">    name:<span class="string">'obj'</span>,</div><div class="line">    fn()&#123;</div><div class="line">        <span class="comment">// this:obj</span></div><div class="line">        _this = <span class="keyword">this</span>;</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="comment">// 里面用_this就可以了</span></div><div class="line">            <span class="built_in">console</span>.log(_this);</div><div class="line">        &#125;.bind(obj1),<span class="number">10000</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj2.fn();</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj3 = &#123;</div><div class="line">    name:<span class="string">'obj'</span>,</div><div class="line">    fn()&#123;</div><div class="line">        <span class="comment">// this:obj</span></div><div class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">        &#125;,<span class="number">10000</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj3.fn();</div></pre></td></tr></table></figure></p>
+<p>箭头函数的一点扩充<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fn = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    name:<span class="string">'obj'</span>,</div><div class="line">    sum()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//this:obj</span></div><div class="line">        fn(); <span class="comment">//this:window  宿主环境：不是执行的环境而是定义的环境，fn虽然是在这执行的，但它是在window定义的，所以它的宿主环境还是window</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.sum();</div></pre></td></tr></table></figure></p>
+<p>层级嵌套的箭头函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> n + (++i);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">let</span> fn1 = <span class="function">(<span class="params">i</span>)=&gt;</span> (n)=&gt; n + (++i);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="es6中的类和继承"><a href="#es6中的类和继承" class="headerlink" title="es6中的类和继承"></a>es6中的类和继承</h4><blockquote>
+<p>es5中创建类和实例，以及如何禁止用户把类当作普通函数执行：<code>new target</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">new</span>.target); <span class="comment">//es6新增加的语法，如果是通过new执行的，返回的结果是当前创建的类，如果是当作普通函数执行的，返回的是undefined</span></div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">new</span>.target === <span class="string">'undefined'</span>)&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">SyntaxError</span>(<span class="string">`当前Person不能作为一个普通函数执行，请使用new Person来执行~~`</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//new执行的时候，this是当前类的实例，this.xxx = xxx是给当前实例增加的私有属性</span></div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"><span class="comment">//原型上存放的是公有的属性和方法：给创建的实例使用</span></div><div class="line">Person.prototype = &#123;</div><div class="line">    <span class="keyword">constructor</span>:Person,</div><div class="line">    say:function () &#123;</div><div class="line">        <span class="string">`my name is <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>,i am <span class="subst">$&#123;<span class="keyword">this</span>.age&#125;</span> years old`</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//把person当作一个普通的对象，给对象设置的私有属性</span></div><div class="line">Person.study = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">//加私有属性</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`good good study,day day up`</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'白英'</span>,<span class="string">'20'</span>);</div><div class="line">Person(); <span class="comment">//当作普通函数执行</span></div></pre></td></tr></table></figure></p>
+<p>es6中创建类<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(Person); <span class="comment">//Uncaught ReferenceError: Person is not defined  说明不存在变量提升</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(name = '珠峰培训',age = 9)&#123;</div><div class="line">        <span class="comment">//给实例设置的私有属性</span></div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">        <span class="keyword">this</span>.age = age;</div><div class="line">        <span class="comment">//直接在大括号中编写的方法都直接设置在类的原型上：es6默认把constructor的问题解决了，此时原型上的constructor指向的就是person</span></div><div class="line">    &#125;</div><div class="line">     <span class="comment">// 把Person当作普通对象设置属性和方法，只需要在设置的方法前面加static即可</span></div><div class="line">    <span class="keyword">static</span> say()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`my name is <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>,i am <span class="subst">$&#123;<span class="keyword">this</span>.age&#125;</span> years old`</span>);</div><div class="line">    &#125;</div><div class="line">    study()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`good good study,day day up`</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> Person(<span class="string">'baiying'</span>);</div><div class="line">Person();<span class="comment">//Uncaught TypeError: Class constructor Person cannot be invoked without 'new' es6中使用class创建的类，天生自带new.target的验证，不允许把创建的类当作普通函数执行</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+        <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+        </div>
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/es6/" rel="tag"># es6</a>
+          
+            <a href="/tags/箭头函数/" rel="tag"># 箭头函数</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/19/CSS3中的3D动画/" rel="next" title="css3中的3D动画">
+                <i class="fa fa-chevron-left"></i> css3中的3D动画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="belle" />
+            
+              <p class="site-author-name" itemprop="name">belle</p>
+              <p class="site-description motion-element" itemprop="description">爱学习的小萝卜</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/baiying666" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/d3839b4fa45b" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://segmentfault.com/u/yiqianlvye" target="_blank" title="SegmentFault">
+                    
+                      <i class="fa fa-fw fa-globe"></i>SegmentFault</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://juejin.im/user/59f82540f265da4335620f55" target="_blank" title="掘金">
+                    
+                      <i class="fa fa-fw fa-globe"></i>掘金</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#es6中的类和继承"><span class="nav-number">1.</span> <span class="nav-text">es6中的类和继承</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">belle</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
+
+

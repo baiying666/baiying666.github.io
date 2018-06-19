@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="选择器,css," />
+  <meta name="keywords" content="类,继承," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
-<meta name="keywords" content="选择器,css">
+<meta name="description" content="类的定义的方式 实例创建方式 12345678var person1 = new Object;person1.color = &apos;yellow&apos;;person1.eyes = &apos;black&apos;;person1.behavior = function() &amp;#123;  console.log(&apos;eat&apos;);  console.log(&apos;cry&apos;);&amp;#125;console.log(person);">
+<meta name="keywords" content="类,继承">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3选择器与jQuery选择器">
-<meta property="og:url" content="http://naivebai.site/2018/06/19/css选择器/index.html">
+<meta property="og:title" content="类的定义和继承">
+<meta property="og:url" content="http://naivebai.site/2018/06/19/类的定义和继承/index.html">
 <meta property="og:site_name" content="Belle&#39;s blog">
-<meta property="og:description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
+<meta property="og:description" content="类的定义的方式 实例创建方式 12345678var person1 = new Object;person1.color = &apos;yellow&apos;;person1.eyes = &apos;black&apos;;person1.behavior = function() &amp;#123;  console.log(&apos;eat&apos;);  console.log(&apos;cry&apos;);&amp;#125;console.log(person);">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-19T02:02:18.818Z">
+<meta property="og:updated_time" content="2018-06-19T03:44:14.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3选择器与jQuery选择器">
-<meta name="twitter:description" content="1,Css与jQuery选择器转换 gt lt eqtable{    width: 100px;} | 名称 | Css | jQuery | | —- | —- | —- | | 第一个元素 | :first-child | :first,:first-child | | 最后个元素 | :last-child | :last,:last-child | | 偶数的元素 | :nth-chil">
+<meta name="twitter:title" content="类的定义和继承">
+<meta name="twitter:description" content="类的定义的方式 实例创建方式 12345678var person1 = new Object;person1.color = &apos;yellow&apos;;person1.eyes = &apos;black&apos;;person1.behavior = function() &amp;#123;  console.log(&apos;eat&apos;);  console.log(&apos;cry&apos;);&amp;#125;console.log(person);">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://naivebai.site/2018/06/19/css选择器/"/>
+  <link rel="canonical" href="http://naivebai.site/2018/06/19/类的定义和继承/"/>
 
 
 
 
 
-  <title>CSS3选择器与jQuery选择器 | Belle's blog</title>
+  <title>类的定义和继承 | Belle's blog</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/06/19/css选择器/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/06/19/类的定义和继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS3选择器与jQuery选择器</h1>
+          <h1 class="post-title" itemprop="name headline">类的定义和继承</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/类/" itemprop="url" rel="index">
+                    <span itemprop="name">类</span>
                   </a>
                 </span>
 
@@ -362,17 +362,38 @@
       
 
       
-        <h4 id="1-Css与jQuery选择器转换-gt-lt-eq"><a href="#1-Css与jQuery选择器转换-gt-lt-eq" class="headerlink" title="1,Css与jQuery选择器转换 gt lt eq"></a>1,Css与jQuery选择器转换 gt lt eq</h4><p><style><br>table{<br>    width: 100px;<br>}<br></style><br> | 名称 | Css | jQuery |<br> | —- | —- | —- |<br> | 第一个元素 | :first-child | :first,:first-child |<br> | 最后个元素 | :last-child | :last,:last-child |<br> | 偶数的元素 | :nth-child(even) | :even |<br> | 奇数的元素 | :nth-child(odd) | :odd |<br> | 大于给定索引值的元素 | :nth-child(n+2) | :gt(0) |<br> | 小于给定索引值的元素 | :nth-child(-n+6)| :lt(2) |</p>
-<h4 id="2-CSS3-nth-child-伪类选择器"><a href="#2-CSS3-nth-child-伪类选择器" class="headerlink" title="2,CSS3 :nth-child()伪类选择器"></a>2,CSS3 :nth-child()伪类选择器</h4><ul>
-<li>:nth-child(an+b)解读<blockquote>
-<ol>
-<li>:nth-child(n) n为大于0的整数</li>
-<li>:nth-child(an) 倍数写法，例如第2、第6、第9</li>
-<li>:nth-child(an+b) 与 :nth-child(an-b)</li>
-<li>:nth-child(-an+b) 从b个开始往回算，所以它匹配的最多也不会超过b个</li>
-<li>:nth-child(odd) 与 :nth-child(even),:nth-child(2n) 与 :nth-child(2n+1) 奇偶配</li>
-</ol>
-</blockquote>
+        <h4 id="类的定义的方式"><a href="#类的定义的方式" class="headerlink" title="类的定义的方式"></a>类的定义的方式</h4><ul>
+<li><p>实例创建方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> <span class="built_in">Object</span>;</div><div class="line">person1.color = <span class="string">'yellow'</span>;</div><div class="line">person1.eyes = <span class="string">'black'</span>;</div><div class="line">person1.behavior = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'cry'</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(person);</div></pre></td></tr></table></figure>
+</li>
+<li><p>字面量创建方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person2 = &#123;</div><div class="line">    color:<span class="string">'yellow'</span>,</div><div class="line">    eyes:<span class="string">'black'</span>,</div><div class="line">    behavior:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'cry'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(person2);</div></pre></td></tr></table></figure>
+</li>
+<li><p>工厂模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">human</span>(<span class="params">color,eyes</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>;</div><div class="line">  person.color = color;</div><div class="line">  person.eyes = eyes;</div><div class="line">  person.behavior = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'cry'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> person;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> human1 = human(<span class="string">'yellow'</span>,<span class="string">'black'</span>);</div><div class="line"><span class="keyword">var</span> human2 = human(<span class="string">'black'</span>,<span class="string">'brown'</span>);</div><div class="line"><span class="built_in">console</span>.log(human1);</div><div class="line"><span class="built_in">console</span>.log(human2);</div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Human</span>(<span class="params">color,eyes</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.color = color;</div><div class="line">  <span class="keyword">this</span>.eyes = eyes;</div><div class="line">  <span class="keyword">this</span>.behavior = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'cry'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> human3 = <span class="keyword">new</span> Human(<span class="string">'yellow'</span>,<span class="string">'black'</span>);</div><div class="line"><span class="built_in">console</span>.log(human3);</div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数 + 原型方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Human</span>(<span class="params">color,eyes</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.color = color;</div><div class="line">  <span class="keyword">this</span>.eyes = eyes;</div><div class="line">&#125;</div><div class="line">Renlei.prototype.behavior = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'eat'</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'cry'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> renlei1 = <span class="keyword">new</span> Renlei(<span class="string">'yellow'</span>,<span class="string">'black'</span>);</div><div class="line">renlei1.behavior();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><ul>
+<li><p>构造函数绑定的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.behavior = <span class="string">'会叫'</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  Animal.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat();</div><div class="line"><span class="built_in">console</span>.log(cat1.behavior);</div></pre></td></tr></table></figure>
+</li>
+<li><p>prototype模式 如果Cat的prototype对象指向Animal的一个实例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.behavior = <span class="string">'会叫'</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'cat'</span>;</div><div class="line">&#125;</div><div class="line">Cat.prototype = <span class="keyword">new</span> Animal();</div><div class="line">Cat.prototype.constructor = Cat;</div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Cat());</div></pre></td></tr></table></figure>
+</li>
+<li><p>第三种是直接继承prototype对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Cat.prototype = Animal.prototype;</div><div class="line">Cat.prototype.constructor = Cat;</div><div class="line"><span class="comment">//有一个缺点是Cat.prototype和Animal.prototype指向了同一个对象，那么任何对Cat.prototype的修改都会反映到Animal.prototype</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>第四种是利用空对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  </div><div class="line">&#125;</div><div class="line">F.prototype = Animal.prototype;</div><div class="line">Cat.prototype = <span class="keyword">new</span> F();</div><div class="line">Cat.prototype.constructor = Cat;</div></pre></td></tr></table></figure>
+</li>
+<li><p>第五种方式是拷贝继承</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c = Cat.prototype;</div><div class="line"><span class="keyword">var</span> a = Animal.prototype;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> a)&#123;</div><div class="line">    c[i] = a[i];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -403,9 +424,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/选择器/" rel="tag"># 选择器</a>
+            <a href="/tags/类/" rel="tag"># 类</a>
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/继承/" rel="tag"># 继承</a>
           
         </div>
       
@@ -418,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/19/es6-对象的解构赋值/" rel="next" title="es6-对象的解构赋值">
-                <i class="fa fa-chevron-left"></i> es6-对象的解构赋值
+              <a href="/2018/06/19/HTML5新特性讲解/" rel="next" title="HTML5新特性讲解">
+                <i class="fa fa-chevron-left"></i> HTML5新特性讲解
               </a>
             
           </div>
@@ -428,8 +449,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/19/exec和match的区别/" rel="prev" title="exec和match的区别">
-                exec和match的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/19/CSS3中的3D动画/" rel="prev" title="css3中的3D动画">
+                css3中的3D动画 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Css与jQuery选择器转换-gt-lt-eq"><span class="nav-number">1.</span> <span class="nav-text">1,Css与jQuery选择器转换 gt lt eq</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-CSS3-nth-child-伪类选择器"><span class="nav-number">2.</span> <span class="nav-text">2,CSS3 :nth-child()伪类选择器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#类的定义的方式"><span class="nav-number">1.</span> <span class="nav-text">类的定义的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li></ol></div>
             
 
           </div>

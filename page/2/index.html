@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/04/24/返回和强制刷新页面/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/06/19/es6-对象的解构赋值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -291,7 +291,158 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/24/返回和强制刷新页面/" itemprop="url">返回上一页的几种方法</a></h1>
+                <a class="post-title-link" href="/2018/06/19/es6-对象的解构赋值/" itemprop="url">es6-对象的解构赋值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T00:00:00+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es6/" itemprop="url" rel="index">
+                    <span itemprop="name">es6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> &#123;,age&#125; = &#123;<span class="attr">name</span>: <span class="string">'珠峰培训'</span>,age <span class="number">9</span>&#125;;  <span class="comment">//和数组的解构赋值不一样的地方在于，对象前面不允许出现空来占位（因为对象获取需要通过具体的属性名获取，写成空的话，浏览器不知道怎么识别）</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> &#123;name,...arg&#125; = &#123;<span class="attr">name</span>:<span class="string">'珠峰培训'</span>,<span class="attr">age</span>: <span class="number">9</span>,<span class="attr">teacher</span>:<span class="string">'周小婷'</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(name,arg); <span class="comment">// 珠峰培训  &#123;age: 9, teacher: "周小婷"&#125; 支持拓展运算符的</span></div><div class="line"></div><div class="line">&#123;<span class="attr">name</span>:<span class="string">'xxx'</span>,<span class="attr">age</span>:<span class="number">10</span>,<span class="attr">score</span>:[<span class="number">100</span>,<span class="number">90</span>,<span class="number">80</span>]&#125;</div><div class="line"><span class="keyword">let</span> &#123;C = <span class="number">0</span>&#125; = &#123;<span class="attr">name</span>: <span class="string">'珠峰培训'</span>,<span class="attr">age</span>: <span class="number">9</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(C); <span class="comment">// 0 和数组的解构赋值一样，我们可以把后面不需要获取的结构省略掉，而且也可以给当前的变量设置默认值</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">let</span> &#123;...E&#125; = &#123;<span class="attr">name</span>: <span class="string">'珠峰培训'</span>,<span class="attr">age</span>: <span class="number">9</span>&#125;; </div><div class="line"><span class="built_in">console</span>.log(E); <span class="comment">//&#123;name: "珠峰培训", age: 9&#125;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//把对象进行浅克隆（只把第一级克隆了）</span></div><div class="line"><span class="keyword">let</span> obj1 = &#123;<span class="attr">name</span>:<span class="string">'baiying'</span>,<span class="attr">age</span>:<span class="number">20</span>,<span class="attr">sex</span>:<span class="string">'nv'</span>&#125;;</div><div class="line"><span class="keyword">let</span> &#123;...arg&#125; = obj1;</div><div class="line"><span class="built_in">console</span>.log(obj,arg);</div><div class="line"><span class="built_in">console</span>.log(obj1===arg);<span class="comment">//false</span></div><div class="line"><span class="built_in">console</span>.log(arg.sex === obj1.sex); <span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> &#123;<span class="attr">name</span>:A,<span class="attr">age</span>:B&#125; = &#123;<span class="attr">name</span>:<span class="string">'珠峰培训'</span>,<span class="attr">age</span>:<span class="number">9</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(A,B); <span class="comment">//'珠峰培训' 9   在对象的解构赋值中，我们可以把对象的属性名起一个小名，(A和B相当于小名或者叫做别名)</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> data = [</div><div class="line">    &#123;</div><div class="line">        <span class="string">"name"</span>:<span class="string">"张三"</span>,</div><div class="line">        <span class="string">"age"</span>:<span class="number">25</span>,</div><div class="line">        <span class="string">"score"</span>:&#123;</div><div class="line">            <span class="string">"english"</span>:[<span class="number">100</span>,<span class="number">90</span>,<span class="number">95</span>],</div><div class="line">            <span class="string">"math"</span>:[<span class="number">100</span>,<span class="number">100</span>,<span class="number">100</span>],</div><div class="line">            <span class="string">"chinese"</span>:[<span class="number">98</span>,<span class="number">99</span>,<span class="number">100</span>]</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="string">"name"</span>:<span class="string">"李四"</span>,</div><div class="line">               <span class="string">"age"</span>:<span class="number">24</span>,</div><div class="line">               <span class="string">"score"</span>:&#123;</div><div class="line">                   <span class="string">"english"</span>:[<span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>],</div><div class="line">                   <span class="string">"math"</span>:[<span class="number">149</span>,<span class="number">150</span>,<span class="number">148</span>],</div><div class="line">                   <span class="string">"chinese"</span>:[<span class="number">100</span>,<span class="number">90</span>,<span class="number">80</span>]</div><div class="line">               &#125; </div><div class="line">    &#125;</div><div class="line">]</div><div class="line"></div><div class="line"><span class="keyword">let</span> [&#123;name,age,<span class="attr">score</span>:&#123;<span class="attr">english</span>:[A],<span class="attr">math</span>:[,B],<span class="attr">chinese</span>:[,,C]&#125;&#125;] = data;</div><div class="line"><span class="built_in">console</span>.log(A,B);</div></pre></td></tr></table></figure>
+<h4 id="对象的解构赋值在真实项目中的应用"><a href="#对象的解构赋值在真实项目中的应用" class="headerlink" title="对象的解构赋值在真实项目中的应用"></a>对象的解构赋值在真实项目中的应用</h4><blockquote>
+<p>快速交换两个变量值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">12</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">13</span>;</div><div class="line">[a,b] = [b.a];</div><div class="line"><span class="built_in">console</span>.log(a,b); <span class="comment">//13 12</span></div></pre></td></tr></table></figure></p>
+<p>接收函数返回的多个值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">12</span>,</div><div class="line">        b = <span class="number">13</span>,</div><div class="line">        c = <span class="number">14</span>;</div><div class="line">   <span class="keyword">return</span> [a,b,c];</div><div class="line">&#125;;</div><div class="line"><span class="keyword">let</span> [a,b,c] = fn();</div><div class="line"><span class="built_in">console</span>.log(a,b,c); <span class="comment">// 12 13 14</span></div><div class="line"><span class="string">`</span></div></pre></td></tr></table></figure></p>
+<p>可以快速接收到传递的多个值（我传递的是一个数组或者对象）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">[A,B,C,D=<span class="number">0</span>]</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(A,B,C,D); <span class="comment">// 12 23 34 0</span></div><div class="line">&#125;;</div><div class="line">fn([<span class="number">12</span>,<span class="number">23</span>,<span class="number">34</span>]);</div><div class="line"><span class="built_in">console</span>.log(A,B,C); <span class="comment">// 12 23 34  函数中的ABC是私有的变量</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> animate = <span class="function"><span class="keyword">function</span>(<span class="params">&#123;curEle = null,target = &#123;&#125;,duration = <span class="number">1000</span>,callBack = null&#125; = &#123;&#125;</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(curEle,target,duration,callBack);</div><div class="line">&#125;</div><div class="line">animate(&#123;</div><div class="line">curEle: <span class="built_in">document</span>.body,</div><div class="line">target:&#123;<span class="attr">opacity</span>:<span class="number">1</span>&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">animate() <span class="comment">//都会有相应的默认值</span></div></pre></td></tr></table></figure></p>
+<p>es6中支持给函数设置默认值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(x); <span class="comment">//undefined</span></div><div class="line">      x = x || <span class="number">0</span>; <span class="comment">//es5中这样来设置默认值</span></div><div class="line">      <span class="built_in">console</span>.log(x); <span class="comment">// x = 0;</span></div><div class="line">  &#125;</div><div class="line">  fn()</div><div class="line"></div><div class="line"></div><div class="line">  <span class="keyword">let</span> fn2 = <span class="function"><span class="keyword">function</span> (<span class="params">x = <span class="number">0</span></span>) </span>&#123; <span class="comment">//es6中支持赋默认值，不用解构赋值也可以</span></div><div class="line">      <span class="built_in">console</span>.log(x); <span class="comment">// x = 0;</span></div><div class="line">  &#125;</div><div class="line">  fn2()</div></pre></td></tr></table></figure></p>
+<p>遍历map结构</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/04/24/返回上一页的几种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/24/返回上一页的几种方法/" itemprop="url">返回上一页的几种方法</a></h1>
         
 
         <div class="post-meta">
@@ -439,7 +590,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/04/24/返回上一页的几种方法/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2018/04/24/返回和强制刷新页面/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -458,7 +609,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/24/返回上一页的几种方法/" itemprop="url">返回上一页的几种方法</a></h1>
+                <a class="post-title-link" href="/2018/04/24/返回和强制刷新页面/" itemprop="url">返回上一页的几种方法</a></h1>
         
 
         <div class="post-meta">
@@ -947,152 +1098,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/19/jquery可能会出现的bug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="belle">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Belle's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/19/jquery可能会出现的bug/" itemprop="url">jquery可能会出现的bug</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T00:00:00+08:00">
-                2017-12-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>jqurey在用append()和html添加处理一些特定的元素时，有的会出现丢失属性的bug。原因不明，改用原生的js的<br>document.createElement和innerHTML添加就好了。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-      
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/19/github的一些问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1205,6 +1210,152 @@
 </li>
 </ul>
 <h4 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h4><p><a href="http://www.open-open.com/lib/view/open1418368878948.html#articleHeader9" target="_blank" rel="external">git常用命令</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+      
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/19/jquery可能会出现的bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="belle">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Belle's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/19/jquery可能会出现的bug/" itemprop="url">jquery可能会出现的bug</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T00:00:00+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>jqurey在用append()和html添加处理一些特定的元素时，有的会出现丢失属性的bug。原因不明，改用原生的js的<br>document.createElement和innerHTML添加就好了。</li>
+</ul>
 
           
         
@@ -1398,7 +1549,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/即时反应的input和propertychange方法/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/给一段文字中的某个字符添加下划线/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -1417,7 +1568,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/12/即时反应的input和propertychange方法/" itemprop="url">即时反应的input和propertychange方法</a></h1>
+                <a class="post-title-link" href="/2017/12/12/给一段文字中的某个字符添加下划线/" itemprop="url">特殊线 - 应用绝对定位</a></h1>
         
 
         <div class="post-meta">
@@ -1452,171 +1603,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/input/" itemprop="url" rel="index">
-                    <span itemprop="name">input</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>在web开发中，我们有时会需要动态监听输入框值的变化，当使用onkeydown、onkeypress、onkeyup作为监听事件时，会发现一些复制粘贴等操作用不了，同时，在处理组合快键键的时候也很麻烦。这时候我们需要更专业的解决方案：HTML5标准事件oninput、onchange和IE专属的事件properchange。</p>
-<ol>
-<li>oninput&amp;onchange：</li>
-</ol>
-<ul>
-<li>oninput和onchange都是事件对象，当输入框的值发生改变时触发该事件。不同的是，oninput是在值改变时立即触发，而onchange是在值改变后失去焦点才触发，并且可以用在非输入框中，如：select等。</li>
-</ul>
-<ol>
-<li>propertychange：</li>
-</ol>
-<ul>
-<li>功能同oninput，用以替代oninput在IE9以下的不兼容性。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(function()&#123; //这里bind同时绑定了input和propertychange两个方法。</div><div class="line"></div><div class="line">    $(&apos;#username&apos;).bind(&apos;input propertychange&apos;, function() &#123;  </div><div class="line"></div><div class="line">    $(&apos;#result&apos;).html($(this).val().length + &apos; characters&apos;);  </div><div class="line"></div><div class="line">  &#125;);  </div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<p>3.onblur:</p>
-<ul>
-<li>onblur是鼠标焦点离开控件，比如选中别的控件</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-      
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/hexo博客相关的问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="belle">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Belle's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/12/hexo博客相关的问题/" itemprop="url">hexo博客相关的问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-12T00:00:00+08:00">
-                2017-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -1655,10 +1643,11 @@
         
           
             <ul>
-<li><a href="http://www.jianshu.com/p/0321cb243963" target="_blank" rel="external">详细 hexo+Github Pages-搭建个人网站</a></li>
-<li><a href="http://www.jianshu.com/p/beb8d611340a" target="_blank" rel="external">Hexo博客从一台电脑迁移到其他电脑</a></li>
-<li><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="external">hexo的next主题个性化教程:打造炫酷网站</a></li>
-<li>hexo本地测试运行重启后页面空白 看看是不是主题文件是不是没有提交到git上去，以至于在分之下载的时候没有下载下主题来<br>-<a href="http://www.jianshu.com/p/db7e64d86067" target="_blank" rel="external">修改博客主题</a></li>
+<li><p>给一段文字中的某个字符添加下划线</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">a&#123;</div><div class="line">       position: relative;</div><div class="line">   &#125;</div><div class="line">   a:after&#123;</div><div class="line">       position: absolute;</div><div class="line">       content: &quot;&quot;;</div><div class="line">       display: inline-block;</div><div class="line">       top:12px;</div><div class="line">       left:50px;</div><div class="line">       width: 80px;</div><div class="line">       height: 50px;</div><div class="line">       background-color: red;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>一行文字两侧有两条线可以无线延伸</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        .infobox-header&#123;</div><div class="line">            position: relative;</div><div class="line">            width: 100%;</div><div class="line">            height: 60px;</div><div class="line">            border-bottom:1px solid #0000AA;</div><div class="line">        &#125;</div><div class="line">        .txt&#123;</div><div class="line">            position: absolute;</div><div class="line">            left:50%;</div><div class="line">            margin-left:-100px;</div><div class="line">            width:200px;</div><div class="line">            height: 120px;</div><div class="line">            line-height: 120px;</div><div class="line">            background: #fff;</div><div class="line">            text-align: center;</div><div class="line">            font-size:20px;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class=&quot;infobox-header&quot;&gt;</div><div class="line">        &lt;span class=&quot;txt&quot;&gt;版权声明-权利声明&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></li>
 </ul>
 
           
@@ -1710,7 +1699,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/webstorm问题解决办法/">
+    <link itemprop="mainEntityOfPage" href="http://naivebai.site/2017/12/12/webstorm快捷键设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="belle">
@@ -1729,7 +1718,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/12/webstorm问题解决办法/" itemprop="url">webstorm问题解决办法</a></h1>
+                <a class="post-title-link" href="/2017/12/12/webstorm快捷键设置/" itemprop="url">webstorm快捷键设置</a></h1>
         
 
         <div class="post-meta">
@@ -1803,9 +1792,44 @@
       
         
           
-            <blockquote>
-<p>1问题<br><img src="https://baiying666.github.io/images/images/2018-5-4-1.png" alt=""><br>2解决办法<br><img src="https://baiying666.github.io/images/images/2018-5-4-2.png" alt=""></p>
+            <ol>
+<li>WebStorm设置Ctrl+滚轮调整字体大小</li>
+</ol>
+<ul>
+<li>点击左上角的File，再点击Setting -&gt; Editor -&gt; General，选择Change font size (Zoom) with Ctrl+Mouse Wheel；<br>点击OK即可。</li>
+</ul>
+<ol>
+<li>webstorm中配置MarkDown</li>
+</ol>
+<ul>
+<li>Settings -&gt; Plugins -&gt; Browse repostories -&gt; 搜索markdown -&gt; install</li>
+</ul>
+<ol>
+<li>webstorm中设置文件类型</li>
+</ol>
+<ul>
+<li>Settings -&gt; Editor -&gt; file Types -&gt; Markdown -&gt; *.md</li>
+</ul>
+<ol>
+<li>webstorm中设置新建某个类型文件的模板</li>
+</ol>
+<ul>
+<li>Settings -&gt; Editor -&gt; File and Code Templates -&gt;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;&lt;/template&gt;</div><div class="line">&lt;script type=&quot;text/ecmascript-6&quot;&gt;</div><div class="line">    </div><div class="line">&lt;/script&gt;</div><div class="line">&lt;style rel=&quot;stylesheet&quot; href=&quot;$1&quot;&gt;</div><div class="line">    </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>3和4必须在2的基础上实现，另外3和4还可合并成一步：在项目上右键点击 -&gt; New -&gt; File and Code Templates，在左边可以设置文件类型，右边可以设置模板代码</p>
+<ol>
+<li>webstorm中设置按某个单词出来代码块</li>
+</ol>
+<ul>
+<li>Settings -&gt; Eitor -&gt; Live Templates -&gt;JavaScript -&gt; 按右面的加号，选Live Template -&gt; Abbreviation:你要规定的单词(比如func) -&gt;<br>Template text:(比如)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">;(function()&#123;</div><div class="line">    $END$</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
 </blockquote>
+<ul>
+<li>最后 Define-&gt;JavaScript</li>
+</ul>
 
           
         
@@ -1897,7 +1921,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1908,7 +1932,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1919,7 +1943,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
